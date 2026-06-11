@@ -1,0 +1,243 @@
+[
+  {
+    "id": "hero-main",
+    "dir": "hero",
+    "aspect": 1.1454545454545454,
+    "widths": [
+      {
+        "width": 480,
+        "file": "assets/images/hero/hero-main-480.webp"
+      },
+      {
+        "width": 768,
+        "file": "assets/images/hero/hero-main-768.webp"
+      },
+      {
+        "width": 960,
+        "file": "assets/images/hero/hero-main-960.webp"
+      },
+      {
+        "width": 1140,
+        "file": "assets/images/hero/hero-main-1140.webp"
+      }
+    ]
+  },
+  {
+    "id": "about-team",
+    "dir": "about",
+    "aspect": 0.8,
+    "widths": [
+      {
+        "width": 400,
+        "file": "assets/images/about/about-team-400.webp"
+      },
+      {
+        "width": 600,
+        "file": "assets/images/about/about-team-600.webp"
+      },
+      {
+        "width": 800,
+        "file": "assets/images/about/about-team-800.webp"
+      }
+    ]
+  },
+  {
+    "id": "case-retail",
+    "dir": "cases",
+    "aspect": 1.7777777777777777,
+    "widths": [
+      {
+        "width": 480,
+        "file": "assets/images/cases/case-retail-480.webp"
+      },
+      {
+        "width": 720,
+        "file": "assets/images/cases/case-retail-720.webp"
+      },
+      {
+        "width": 900,
+        "file": "assets/images/cases/case-retail-900.webp"
+      },
+      {
+        "width": 1200,
+        "file": "assets/images/cases/case-retail-1200.webp"
+      }
+    ]
+  },
+  {
+    "id": "case-banking",
+    "dir": "cases",
+    "aspect": 1.7777777777777777,
+    "widths": [
+      {
+        "width": 480,
+        "file": "assets/images/cases/case-banking-480.webp"
+      },
+      {
+        "width": 720,
+        "file": "assets/images/cases/case-banking-720.webp"
+      },
+      {
+        "width": 900,
+        "file": "assets/images/cases/case-banking-900.webp"
+      },
+      {
+        "width": 1200,
+        "file": "assets/images/cases/case-banking-1200.webp"
+      }
+    ]
+  },
+  {
+    "id": "case-wellness",
+    "dir": "cases",
+    "aspect": 1.7777777777777777,
+    "widths": [
+      {
+        "width": 480,
+        "file": "assets/images/cases/case-wellness-480.webp"
+      },
+      {
+        "width": 720,
+        "file": "assets/images/cases/case-wellness-720.webp"
+      },
+      {
+        "width": 900,
+        "file": "assets/images/cases/case-wellness-900.webp"
+      },
+      {
+        "width": 1200,
+        "file": "assets/images/cases/case-wellness-1200.webp"
+      }
+    ]
+  },
+  {
+    "id": "case-b2b",
+    "dir": "cases",
+    "aspect": 1.7777777777777777,
+    "widths": [
+      {
+        "width": 480,
+        "file": "assets/images/cases/case-b2b-480.webp"
+      },
+      {
+        "width": 720,
+        "file": "assets/images/cases/case-b2b-720.webp"
+      },
+      {
+        "width": 900,
+        "file": "assets/images/cases/case-b2b-900.webp"
+      },
+      {
+        "width": 1200,
+        "file": "assets/images/cases/case-b2b-1200.webp"
+      }
+    ]
+  },
+  {
+    "id": "portfolio-marketing",
+    "dir": "portfolio",
+    "aspect": 1,
+    "widths": [
+      {
+        "width": 400,
+        "file": "assets/images/portfolio/portfolio-marketing-400.webp"
+      },
+      {
+        "width": 600,
+        "file": "assets/images/portfolio/portfolio-marketing-600.webp"
+      },
+      {
+        "width": 800,
+        "file": "assets/images/portfolio/portfolio-marketing-800.webp"
+      }
+    ]
+  },
+  {
+    "id": "portfolio-healthcare",
+    "dir": "portfolio",
+    "aspect": 1,
+    "widths": [
+      {
+        "width": 400,
+        "file": "assets/images/portfolio/portfolio-healthcare-400.webp"
+      },
+      {
+        "width": 600,
+        "file": "assets/images/portfolio/portfolio-healthcare-600.webp"
+      },
+      {
+        "width": 800,
+        "file": "assets/images/portfolio/portfolio-healthcare-800.webp"
+      }
+    ]
+  },
+  {
+    "id": "blog-ai-design",
+    "dir": "blog",
+    "aspect": 2,
+    "widths": [
+      {
+        "width": 400,
+        "file": "assets/images/blog/blog-ai-design-400.webp"
+      },
+      {
+        "width": 600,
+        "file": "assets/images/blog/blog-ai-design-600.webp"
+      },
+      {
+        "width": 800,
+        "file": "assets/images/blog/blog-ai-design-800.webp"
+      },
+      {
+        "width": 1200,
+        "file": "assets/images/blog/blog-ai-design-1200.webp"
+      }
+    ]
+  },
+  {
+    "id": "blog-cookies",
+    "dir": "blog",
+    "aspect": 2,
+    "widths": [
+      {
+        "width": 400,
+        "file": "assets/images/blog/blog-cookies-400.webp"
+      },
+      {
+        "width": 600,
+        "file": "assets/images/blog/blog-cookies-600.webp"
+      },
+      {
+        "width": 800,
+        "file": "assets/images/blog/blog-cookies-800.webp"
+      },
+      {
+        "width": 1200,
+        "file": "assets/images/blog/blog-cookies-1200.webp"
+      }
+    ]
+  },
+  {
+    "id": "blog-saas-strategy",
+    "dir": "blog",
+    "aspect": 2,
+    "widths": [
+      {
+        "width": 400,
+        "file": "assets/images/blog/blog-saas-strategy-400.webp"
+      },
+      {
+        "width": 600,
+        "file": "assets/images/blog/blog-saas-strategy-600.webp"
+      },
+      {
+        "width": 800,
+        "file": "assets/images/blog/blog-saas-strategy-800.webp"
+      },
+      {
+        "width": 1200,
+        "file": "assets/images/blog/blog-saas-strategy-1200.webp"
+      }
+    ]
+  }
+]

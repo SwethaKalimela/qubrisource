@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qubrisource Blog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="article-page">
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><span class="logo-q">Qubri</span>source</a>
+  <ul class="nav-links">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#about">About Us</a></li>
+    <li><a href="index.html#staffing">Staffing</a></li>
+    <li><a href="index.html#portfolio">Our Work</a></li>
+    <li><a href="index.html#team">Team</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+  </ul>
+  <div class="nav-right">
+    <button type="button" class="btn-nav" data-bs-toggle="modal" data-bs-target="#quoteModal">Get a Free Quote</button>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#services" onclick="toggleMenu()">Services</a>
+  <a href="index.html#about" onclick="toggleMenu()">About Us</a>
+  <a href="index.html#staffing" onclick="toggleMenu()">Staffing</a>
+  <a href="index.html#portfolio" onclick="toggleMenu()">Our Work</a>
+  <a href="index.html#team" onclick="toggleMenu()">Team</a>
+  <a href="index.html#blog" onclick="toggleMenu()">Blog</a>
+  <a href="#" onclick="toggleMenu()" data-bs-toggle="modal" data-bs-target="#quoteModal" style="color:var(--blue)">Get a Free Quote →</a>
+</div>
+
+<div id="article-app"></div>
+
+<div id="article-not-found" class="article-body-wrap" hidden>
+  <div class="article-hero-inner" style="padding-top:var(--space-8)">
+    <a href="index.html#blog" class="article-back">← Back to Blog</a>
+    <h1 class="article-title">Article <em>Not Found</em></h1>
+    <p class="article-lead">That post doesn't exist or may have been moved. Browse our latest articles on the homepage.</p>
+    <a href="index.html#blog" class="btn-primary" style="margin-top:var(--space-4);display:inline-flex">View All Posts →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a class="footer-logo" href="index.html"><span class="logo-q">Qubri</span>source</a>
+      <p>Helping businesses grow through better design, smarter marketing, and reliable software — since 2012.</p>
+      <div class="footer-socials">
+        <a href="#">in</a><a href="#">𝕏</a><a href="#">fb</a><a href="#">ig</a><a href="#">gh</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="index.html#services">Software Development</a></li>
+        <li><a href="index.html#services">UI/UX Design</a></li>
+        <li><a href="index.html#services">Digital Marketing</a></li>
+        <li><a href="index.html#services">Brand Identity</a></li>
+        <li><a href="index.html#services">Product Strategy</a></li>
+        <li><a href="index.html#staffing">IT Staffing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#portfolio">Our Work</a></li>
+        <li><a href="index.html#cases">Case Studies</a></li>
+        <li><a href="index.html#team">Our Team</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="index.html#blog">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Get in Touch</h5>
+      <ul>
+        <li><a href="mailto:sales@qubrisource.com">sales@qubrisource.com</a></li>
+        <li><a href="tel:+918125154397">+91 81251 54397</a></li>
+        <li><a href="#">Bangalore, India</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Qubrisource. All rights reserved.</p>
+    <span class="footer-badge">◆ Built in Bangalore, India</span>
+  </div>
+</footer>
+
+<iframe name="zoho-submit-frame" id="zoho-submit-frame" title="Form submission" hidden></iframe>
+
+<div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div class="modal-content quote-modal">
+      <div class="modal-header quote-modal-header">
+        <div>
+          <p class="quote-modal-chip">Get a Free Quote</p>
+          <h2 class="quote-modal-title" id="quoteModalLabel">Tell Us About Your Project</h2>
+          <p class="quote-modal-sub">We'll send you a custom proposal within 24 hours — free, no obligation.</p>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body quote-modal-body">
+        <form
+          id="quote-form"
+          class="contact-form quote-modal-form"
+          action="https://forms.zohopublic.in/qubrisource1/form/QubriSourceContactForm/formperma/r05jrD4DOIdt_5fMtWCrNlu46TqC8VdrXFI1TLtUD-k/htmlRecords/submit"
+          method="POST"
+          accept-charset="UTF-8"
+          enctype="multipart/form-data"
+          target="zoho-submit-frame"
+        >
+          <input type="hidden" name="zf_referrer_name" value="">
+          <input type="hidden" name="zc_gad" value="">
+          <div class="form-row">
+            <div class="f-group">
+              <label for="quote-first-name">First Name</label>
+              <input type="text" id="quote-first-name" name="Name_First" maxlength="255" placeholder="Your first name" required>
+            </div>
+            <div class="f-group">
+              <label for="quote-last-name">Last Name</label>
+              <input type="text" id="quote-last-name" name="Name_Last" maxlength="255" placeholder="Your last name" required>
+            </div>
+          </div>
+          <div class="f-group">
+            <label for="quote-email">Work Email</label>
+            <input type="email" id="quote-email" name="Email" maxlength="255" placeholder="you@yourcompany.com" required>
+          </div>
+          <div class="f-group">
+            <label for="quote-company">Company Name</label>
+            <input type="text" id="quote-company" name="SingleLine" maxlength="255" placeholder="Your company name">
+          </div>
+          <div class="f-group">
+            <label for="quote-service">What Do You Need Help With?</label>
+            <select id="quote-service" name="Dropdown" required>
+              <option value="" disabled selected>Choose a service...</option>
+              <option value="Software Development">Software Development</option>
+              <option value="UI/UX Design">UI/UX Design</option>
+              <option value="Digital Marketing">Digital Marketing</option>
+              <option value="Brand Identity">Brand Identity</option>
+              <option value="Product Strategy">Product Strategy</option>
+              <option value="IT Staffing">IT Staffing</option>
+              <option value="More than one service">More than one service</option>
+            </select>
+          </div>
+          <div class="f-group">
+            <label for="quote-message">Tell Us More</label>
+            <textarea id="quote-message" name="MultiLine" maxlength="65535" placeholder="What are you trying to achieve? What's your timeline and rough budget?"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send My Free Quote Request →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="formSuccessModal" tabindex="-1" aria-labelledby="formSuccessModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content form-success-modal">
+      <div class="modal-body text-center">
+        <div class="form-success-icon" aria-hidden="true">✓</div>
+        <h2 class="form-success-title" id="formSuccessModalLabel">Request Submitted</h2>
+        <p class="form-success-text">Thank you! Your form has been submitted successfully. We'll get back to you within 24 hours.</p>
+        <button type="button" class="btn btn-primary form-success-btn" data-bs-dismiss="modal">Got it</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="assets/js/images.js" defer></script>
+<script src="assets/js/blog-data.js" defer></script>
+<script src="assets/js/blog.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
