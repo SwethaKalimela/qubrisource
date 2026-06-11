@@ -1,1290 +1,1099 @@
 ﻿<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Qubrisource — Design, Marketing & Software for Growing Businesses
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <link
-      rel="preload"
-      as="image"
-      href="assets/images/hero/hero-main-960.webp"
-      imagesrcset="assets/images/hero/hero-main-480.webp 480w, assets/images/hero/hero-main-768.webp 768w, assets/images/hero/hero-main-960.webp 960w, assets/images/hero/hero-main-1140.webp 1140w"
-      imagesizes="(max-width: 767px) 0px, (max-width: 1139px) 45vw, 400px"
-    />
-  </head>
-  <body>
-    <!-- ══ NAV ══ -->
-    <nav id="nav">
-      <a href="#" class="nav-logo"><span class="logo-q">Qubri</span>source</a>
-      <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#staffing">Staffing</a></li>
-        <li><a href="#portfolio">Our Work</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#blog">Blog</a></li>
-      </ul>
-      <div class="nav-right">
-        <a href="#contact" class="btn-nav">Get a Free Quote</a>
-        <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
-          <span></span><span></span><span></span>
-        </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Qubrisource — Design, Marketing & Software for Growing Businesses
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="preload" as="image" href="assets/images/hero/hero-main-960.webp"
+    imagesrcset="assets/images/hero/hero-main-480.webp 480w, assets/images/hero/hero-main-768.webp 768w, assets/images/hero/hero-main-960.webp 960w, assets/images/hero/hero-main-1140.webp 1140w"
+    imagesizes="(max-width: 767px) 0px, (max-width: 1139px) 45vw, 400px" />
+</head>
+
+<body>
+  <!-- ══ NAV ══ -->
+  <nav id="nav">
+    <a href="#" class="nav-logo"><span class="logo-q">Qubri</span>source</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#staffing">Staffing</a></li>
+      <li><a href="#portfolio">Our Work</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#blog">Blog</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="#contact" class="btn-nav">Get a Free Quote</a>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="#about" onclick="toggleMenu()">About Us</a>
+    <a href="#staffing" onclick="toggleMenu()">Staffing</a>
+    <a href="#portfolio" onclick="toggleMenu()">Our Work</a>
+    <a href="#team" onclick="toggleMenu()">Team</a>
+    <a href="#blog" onclick="toggleMenu()">Blog</a>
+    <a href="#contact" onclick="toggleMenu()" style="color: var(--blue)">Get a Free Quote →</a>
+  </div>
+
+  <!-- ══ HERO ══ -->
+  <section id="hero">
+    <canvas id="neural-canvas"></canvas>
+
+    <div class="hero-content">
+      <div class="badge">
+        <span class="badge-dot"></span>Trusted by 200+ Businesses
       </div>
-    </nav>
-
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#services" onclick="toggleMenu()">Services</a>
-      <a href="#about" onclick="toggleMenu()">About Us</a>
-      <a href="#staffing" onclick="toggleMenu()">Staffing</a>
-      <a href="#portfolio" onclick="toggleMenu()">Our Work</a>
-      <a href="#team" onclick="toggleMenu()">Team</a>
-      <a href="#blog" onclick="toggleMenu()">Blog</a>
-      <a href="#contact" onclick="toggleMenu()" style="color: var(--blue)"
-        >Get a Free Quote →</a
-      >
+      <h1 class="hero-h1">
+        Grow Your Business<br />with <em>Better Digital</em><br />Solutions.
+      </h1>
+      <p class="hero-sub">
+        We handle your design, marketing, and software — so you can focus on
+        running your business. No jargon. No surprises. Just results.
+      </p>
+      <div class="hero-btns">
+        <a href="#portfolio" class="btn-primary">See Our Work →</a>
+        <a href="#contact" class="btn-ghost">Get a Free Quote</a>
+      </div>
     </div>
 
-    <!-- ══ HERO ══ -->
-    <section id="hero">
-      <canvas id="neural-canvas"></canvas>
-
-      <div class="hero-content">
-        <div class="badge">
-          <span class="badge-dot"></span>Trusted by 200+ Businesses
-        </div>
-        <h1 class="hero-h1">
-          Grow Your Business<br />with <em>Better Digital</em><br />Solutions.
-        </h1>
-        <p class="hero-sub">
-          We handle your design, marketing, and software — so you can focus on
-          running your business. No jargon. No surprises. Just results.
-        </p>
-        <div class="hero-btns">
-          <a href="#portfolio" class="btn-primary">See Our Work →</a>
-          <a href="#contact" class="btn-ghost">Get a Free Quote</a>
-        </div>
+    <div class="hero-visual">
+      <div class="hero-img-wrap">
+        <img src="assets/images/hero/hero-main-960.webp"
+          srcset="assets/images/hero/hero-main-480.webp 480w, assets/images/hero/hero-main-768.webp 768w, assets/images/hero/hero-main-960.webp 960w, assets/images/hero/hero-main-1140.webp 1140w"
+          sizes="(max-width: 767px) 0px, (max-width: 1139px) 45vw, 400px"
+          alt="Isometric illustration of digital growth, data networks, and business progress" width="960" height="838"
+          loading="eager" fetchpriority="high" decoding="async" />
       </div>
+    </div>
 
-      <div class="hero-visual">
-        <div class="hero-img-wrap">
-          <img
-            src="assets/images/hero/hero-main-960.webp"
-            srcset="assets/images/hero/hero-main-480.webp 480w, assets/images/hero/hero-main-768.webp 768w, assets/images/hero/hero-main-960.webp 960w, assets/images/hero/hero-main-1140.webp 1140w"
-            sizes="(max-width: 767px) 0px, (max-width: 1139px) 45vw, 400px"
-            alt="Isometric illustration of digital growth, data networks, and business progress"
-            width="960"
-            height="838"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          />
-        </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-n">200+</span><span class="stat-l">Projects Done</span>
       </div>
-
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-n">200+</span
-          ><span class="stat-l">Projects Done</span>
-        </div>
-        <div class="stat-div"></div>
-        <div class="stat">
-          <span class="stat-n">98%</span
-          ><span class="stat-l">Happy Clients</span>
-        </div>
-        <div class="stat-div"></div>
-        <div class="stat">
-          <span class="stat-n">40+</span
-          ><span class="stat-l">Team Members</span>
-        </div>
-        <div class="stat-div"></div>
-        <div class="stat">
-          <span class="stat-n">12+</span
-          ><span class="stat-l">Years of Experience</span>
-        </div>
+      <div class="stat-div"></div>
+      <div class="stat">
+        <span class="stat-n">98%</span><span class="stat-l">Happy Clients</span>
       </div>
+      <div class="stat-div"></div>
+      <div class="stat">
+        <span class="stat-n">40+</span><span class="stat-l">Team Members</span>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat">
+        <span class="stat-n">12+</span><span class="stat-l">Years of Experience</span>
+      </div>
+    </div>
 
-      <div class="hero-scroll">
+    <!-- <div class="hero-scroll">
         Scroll
         <div class="scroll-line"></div>
-      </div>
-    </section>
+      </div> -->
+  </section>
 
-    <!-- ══ TRUST BAR ══ -->
-    <div class="marquee-strip">
-      <div class="marquee-track">
-        <span>Software Development</span><span>UI/UX Design</span
-        ><span>Digital Marketing</span> <span>Brand Identity</span
-        ><span>Product Strategy</span><span>IT Staffing</span>
-        <span>Cloud Solutions</span><span>AI Integration</span
-        ><span>E-Commerce</span> <span>Software Development</span
-        ><span>UI/UX Design</span><span>Digital Marketing</span>
-        <span>Brand Identity</span><span>Product Strategy</span
-        ><span>IT Staffing</span> <span>Cloud Solutions</span
-        ><span>AI Integration</span><span>E-Commerce</span>
+  <!-- ══ TRUST BAR ══ -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Software Development</span><span>UI/UX Design</span><span>Digital Marketing</span> <span>Brand
+        Identity</span><span>Product Strategy</span><span>IT Staffing</span>
+      <span>Cloud Solutions</span><span>AI Integration</span><span>E-Commerce</span> <span>Software
+        Development</span><span>UI/UX Design</span><span>Digital Marketing</span>
+      <span>Brand Identity</span><span>Product Strategy</span><span>IT Staffing</span> <span>Cloud
+        Solutions</span><span>AI Integration</span><span>E-Commerce</span>
+    </div>
+  </div>
+
+  <!-- ══ SERVICES ══ -->
+  <section id="services">
+    <div class="section-hd center reveal">
+      <div class="section-chip">What We Do</div>
+      <h2 class="section-h2">
+        Everything Your Business Needs to <em>Win Online</em>
+      </h2>
+      <p class="section-p">
+        From your first website to your next big product launch — we cover
+        design, marketing, software, and hiring under one roof.
+      </p>
+    </div>
+    <div class="services-grid reveal">
+      <div class="srv-card">
+        <div class="srv-icon">💻</div>
+        <h3>Software Development</h3>
+        <p>
+          We build websites, mobile apps, and custom software that work fast,
+          look great, and are easy to manage. No complicated tech talk — just
+          solutions that fit your business.
+        </p>
+        <span class="srv-tag">Web · Mobile · API</span>
+      </div>
+      <div class="srv-card">
+        <div class="srv-icon">🎨</div>
+        <h3>UI/UX Design</h3>
+        <p>
+          Your product should be easy to use and a pleasure to look at. We
+          design digital experiences that guide your users naturally — and
+          turn more visitors into paying customers.
+        </p>
+        <span class="srv-tag">Research · Wireframes · Prototypes</span>
+      </div>
+      <div class="srv-card">
+        <div class="srv-icon">📈</div>
+        <h3>Digital Marketing</h3>
+        <p>
+          More leads. More sales. More growth. We run Google and Meta
+          campaigns, manage SEO, and create content strategies that bring the
+          right people to your door.
+        </p>
+        <span class="srv-tag">SEO · Paid Ads · Social Media</span>
+      </div>
+      <div class="srv-card">
+        <div class="srv-icon">✦</div>
+        <h3>Brand Identity</h3>
+        <p>
+          A strong brand makes people trust you before they even speak with
+          you. We create logos, visual systems, and messaging that make your
+          business stand out and stay memorable.
+        </p>
+        <span class="srv-tag">Logo · Guidelines · Messaging</span>
+      </div>
+      <div class="srv-card">
+        <div class="srv-icon">🧭</div>
+        <h3>Product Strategy</h3>
+        <p>
+          Before we build anything, we help you make sure you're building the
+          right thing. We map out your market, users, and roadmap — so every
+          decision moves your business forward.
+        </p>
+        <span class="srv-tag">Research · Roadmap · Go-To-Market</span>
+      </div>
+      <div class="srv-card">
+        <div class="srv-icon">👥</div>
+        <h3>IT Staffing</h3>
+        <p>
+          Need a developer, designer, or analyst fast? We source and place
+          pre-vetted tech professionals — full-time, part-time, or contract —
+          so you get the right people without the long wait.
+        </p>
+        <span class="srv-tag">Contract · Full-Time · Remote</span>
       </div>
     </div>
+  </section>
 
-    <!-- ══ SERVICES ══ -->
-    <section id="services">
-      <div class="section-hd center reveal">
-        <div class="section-chip">What We Do</div>
-        <h2 class="section-h2">
-          Everything Your Business Needs to <em>Win Online</em>
-        </h2>
-        <p class="section-p">
-          From your first website to your next big product launch — we cover
-          design, marketing, software, and hiring under one roof.
-        </p>
-      </div>
-      <div class="services-grid reveal">
-        <div class="srv-card">
-          <div class="srv-icon">💻</div>
-          <h3>Software Development</h3>
-          <p>
-            We build websites, mobile apps, and custom software that work fast,
-            look great, and are easy to manage. No complicated tech talk — just
-            solutions that fit your business.
-          </p>
-          <span class="srv-tag">Web · Mobile · API</span>
-        </div>
-        <div class="srv-card">
-          <div class="srv-icon">🎨</div>
-          <h3>UI/UX Design</h3>
-          <p>
-            Your product should be easy to use and a pleasure to look at. We
-            design digital experiences that guide your users naturally — and
-            turn more visitors into paying customers.
-          </p>
-          <span class="srv-tag">Research · Wireframes · Prototypes</span>
-        </div>
-        <div class="srv-card">
-          <div class="srv-icon">📈</div>
-          <h3>Digital Marketing</h3>
-          <p>
-            More leads. More sales. More growth. We run Google and Meta
-            campaigns, manage SEO, and create content strategies that bring the
-            right people to your door.
-          </p>
-          <span class="srv-tag">SEO · Paid Ads · Social Media</span>
-        </div>
-        <div class="srv-card">
-          <div class="srv-icon">✦</div>
-          <h3>Brand Identity</h3>
-          <p>
-            A strong brand makes people trust you before they even speak with
-            you. We create logos, visual systems, and messaging that make your
-            business stand out and stay memorable.
-          </p>
-          <span class="srv-tag">Logo · Guidelines · Messaging</span>
-        </div>
-        <div class="srv-card">
-          <div class="srv-icon">🧭</div>
-          <h3>Product Strategy</h3>
-          <p>
-            Before we build anything, we help you make sure you're building the
-            right thing. We map out your market, users, and roadmap — so every
-            decision moves your business forward.
-          </p>
-          <span class="srv-tag">Research · Roadmap · Go-To-Market</span>
-        </div>
-        <div class="srv-card">
-          <div class="srv-icon">👥</div>
-          <h3>IT Staffing</h3>
-          <p>
-            Need a developer, designer, or analyst fast? We source and place
-            pre-vetted tech professionals — full-time, part-time, or contract —
-            so you get the right people without the long wait.
-          </p>
-          <span class="srv-tag">Contract · Full-Time · Remote</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ ABOUT ══ -->
-    <section id="about">
-      <div class="about-visual reveal">
-        <div class="about-img">
-          <img
-            src="assets/images/about/about-team-800.webp"
-            srcset="
+  <!-- ══ ABOUT ══ -->
+  <section id="about">
+    <div class="about-visual reveal">
+      <div class="about-img">
+        <img src="assets/images/about/about-team-800.webp" srcset="
               assets/images/about/about-team-400.webp 400w,
               assets/images/about/about-team-600.webp 600w,
               assets/images/about/about-team-800.webp 800w
-            "
-            sizes="(max-width: 768px) 100vw, 480px"
-            alt="Diverse Qubrisource team collaborating around a table"
-            width="800"
-            height="1000"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-        <div class="about-float af1">
-          <div class="about-fn">12+</div>
-          <div class="about-fl">Years in business</div>
-        </div>
-        <div class="about-float af2">
-          <div class="about-fn">200+</div>
-          <div class="about-fl">Projects completed</div>
-        </div>
+            " sizes="(max-width: 768px) 100vw, 480px" alt="Diverse Qubrisource team collaborating around a table"
+          width="800" height="1000" loading="lazy" decoding="async" />
       </div>
-      <div class="about-text reveal">
-        <div class="section-chip">About Qubrisource</div>
-        <h2 class="section-h2">
-          We're the Team That <em>Actually Delivers</em>
-        </h2>
-        <p class="section-p">
-          Founded in 2012, Qubrisource has helped hundreds of businesses — from
-          local startups to global brands — grow with better design, smarter
-          marketing, and reliable software. We don't overpromise. We get the job
-          done.
-        </p>
+      <div class="about-float af1">
+        <div class="about-fn">12+</div>
+        <div class="about-fl">Years in business</div>
+      </div>
+      <div class="about-float af2">
+        <div class="about-fn">200+</div>
+        <div class="about-fl">Projects completed</div>
+      </div>
+    </div>
+    <div class="about-text reveal">
+      <div class="section-chip">About Qubrisource</div>
+      <h2 class="section-h2">
+        We're the Team That <em>Actually Delivers</em>
+      </h2>
+      <p class="section-p">
+        Founded in 2012, Qubrisource has helped hundreds of businesses — from
+        local startups to global brands — grow with better design, smarter
+        marketing, and reliable software. We don't overpromise. We get the job
+        done.
+      </p>
 
-        <div class="feat-item">
-          <div class="feat-ico">🎯</div>
-          <div>
-            <h4>We focus on outcomes, not outputs</h4>
-            <p>
-              You hired us to grow your business — not just to make things look
-              pretty. Every project we take on is measured against real results:
-              more sales, more leads, better efficiency.
-            </p>
-          </div>
-        </div>
-        <div class="feat-item">
-          <div class="feat-ico">🔍</div>
-          <div>
-            <h4>We're honest about what works</h4>
-            <p>
-              We won't sell you a service you don't need. If we think a
-              different approach will serve you better, we'll tell you — even if
-              it means less work for us.
-            </p>
-          </div>
-        </div>
-        <div class="feat-item">
-          <div class="feat-ico">⚡</div>
-          <div>
-            <h4>We move fast without cutting corners</h4>
-            <p>
-              Most agencies take months to get started. We're ready in days.
-              You'll have a dedicated team, clear timelines, and regular
-              check-ins from day one.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ PROCESS ══ -->
-    <section id="process">
-      <div class="section-hd center reveal">
-        <div class="section-chip">How We Work</div>
-        <h2 class="section-h2">From First Call to Final <em>Launch</em></h2>
-        <p class="section-p">
-          A simple, clear process so you always know where your project stands —
-          and what happens next.
-        </p>
-      </div>
-      <div class="process-grid reveal">
-        <div class="proc-step">
-          <div class="proc-num">1</div>
-          <h4>Discovery Call</h4>
-          <p>
-            We learn about your business, goals, and what you've already tried.
-            Free, no strings attached.
-          </p>
-        </div>
-        <div class="proc-step">
-          <div class="proc-num">2</div>
-          <h4>Strategy & Proposal</h4>
-          <p>
-            We put together a clear plan, timeline, and price. You decide if
-            we're the right fit.
-          </p>
-        </div>
-        <div class="proc-step">
-          <div class="proc-num">3</div>
-          <h4>Design & Build</h4>
-          <p>
-            Your dedicated team gets to work. You'll see progress weekly and can
-            give feedback anytime.
-          </p>
-        </div>
-        <div class="proc-step">
-          <div class="proc-num">4</div>
-          <h4>Review & Refine</h4>
-          <p>
-            We test everything thoroughly and make changes based on your
-            feedback before going live.
-          </p>
-        </div>
-        <div class="proc-step">
-          <div class="proc-num">5</div>
-          <h4>Launch & Support</h4>
-          <p>
-            We go live, track results, and stay available to support you as your
-            business grows.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ STAFFING ══ -->
-    <section id="staffing">
-      <div class="staffing-wrap">
+      <div class="feat-item">
+        <div class="feat-ico">🎯</div>
         <div>
-          <div class="section-chip reveal">IT Staffing</div>
-          <h2 class="section-h2 reveal">
-            Hire Tech Talent in <em>Days, Not Months</em>
-          </h2>
-          <p class="section-p reveal">
-            Finding great developers, designers, and analysts on your own takes
-            time you don't have. We give you access to a pool of pre-vetted
-            professionals — ready to work exactly how you need them to.
+          <h4>We focus on outcomes, not outputs</h4>
+          <p>
+            You hired us to grow your business — not just to make things look
+            pretty. Every project we take on is measured against real results:
+            more sales, more leads, better efficiency.
           </p>
-          <div class="staffing-models">
-            <div class="s-model reveal">
-              <h4>🧑‍💻 Dedicated Full-Time Hire</h4>
-              <p>
-                One person, fully committed to your team. Works your hours,
-                joins your standups, and becomes part of your culture — without
-                the overhead of direct employment.
-              </p>
-            </div>
-            <div class="s-model reveal">
-              <h4>🏗️ Project-Based Team</h4>
-              <p>
-                Need a whole squad for a specific project? We put together the
-                exact mix of skills you need — designers, developers, QA — and
-                you only pay for the time you use.
-              </p>
-            </div>
-            <div class="s-model reveal">
-              <h4>🔄 Flexible Contract Talent</h4>
-              <p>
-                Scale your team up or down as demand changes. Great for
-                businesses that have variable workloads or want to test a hire
-                before committing long-term.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="staffing-right reveal">
-          <h3>Roles We Fill Quickly</h3>
-          <div class="team-builder">
-            <div class="t-role">
-              <div class="ico">💻</div>
-              <div class="nm">Full Stack Dev</div>
-            </div>
-            <div class="t-role">
-              <div class="ico">🎨</div>
-              <div class="nm">UI/UX Designer</div>
-            </div>
-            <div class="t-role">
-              <div class="ico">📱</div>
-              <div class="nm">Mobile Dev</div>
-            </div>
-            <div class="t-role">
-              <div class="ico">☁️</div>
-              <div class="nm">DevOps / Cloud</div>
-            </div>
-            <div class="t-role">
-              <div class="ico">🤖</div>
-              <div class="nm">AI / ML Engineer</div>
-            </div>
-            <div class="t-role">
-              <div class="ico">🧪</div>
-              <div class="nm">QA Engineer</div>
-            </div>
-            <div class="t-role">
-              <div class="ico">📊</div>
-              <div class="nm">Data Analyst</div>
-            </div>
-            <div class="t-role">
-              <div class="ico">🔐</div>
-              <div class="nm">Security Expert</div>
-            </div>
-            <div class="t-role">
-              <div class="ico">🧩</div>
-              <div class="nm">Product Manager</div>
-            </div>
-          </div>
-          <div class="staffing-note">
-            ⚡ Most placements completed within 7 business days
-          </div>
         </div>
       </div>
-    </section>
+      <div class="feat-item">
+        <div class="feat-ico">🔍</div>
+        <div>
+          <h4>We're honest about what works</h4>
+          <p>
+            We won't sell you a service you don't need. If we think a
+            different approach will serve you better, we'll tell you — even if
+            it means less work for us.
+          </p>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-ico">⚡</div>
+        <div>
+          <h4>We move fast without cutting corners</h4>
+          <p>
+            Most agencies take months to get started. We're ready in days.
+            You'll have a dedicated team, clear timelines, and regular
+            check-ins from day one.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- ══ PORTFOLIO ══ -->
-    <section id="portfolio">
-      <div class="section-hd reveal">
-        <div class="section-chip">Our Work</div>
-        <h2 class="section-h2">Projects We're <em>Proud Of</em></h2>
-        <p class="section-p">
-          A sample of work across industries — from e-commerce to healthcare to
-          SaaS.
+  <!-- ══ PROCESS ══ -->
+  <section id="process">
+    <div class="section-hd center reveal">
+      <div class="section-chip">How We Work</div>
+      <h2 class="section-h2">From First Call to Final <em>Launch</em></h2>
+      <p class="section-p">
+        A simple, clear process so you always know where your project stands —
+        and what happens next.
+      </p>
+    </div>
+    <div class="process-grid reveal">
+      <div class="proc-step">
+        <div class="proc-num">1</div>
+        <h4>Discovery Call</h4>
+        <p>
+          We learn about your business, goals, and what you've already tried.
+          Free, no strings attached.
         </p>
       </div>
-      <div class="filter-row reveal">
-        <button
-          class="filter-btn active"
-          onclick="filterPortfolio(this, 'all')"
-        >
-          All
-        </button>
-        <button class="filter-btn" onclick="filterPortfolio(this, 'design')">
-          Design
-        </button>
-        <button class="filter-btn" onclick="filterPortfolio(this, 'dev')">
-          Development
-        </button>
-        <button class="filter-btn" onclick="filterPortfolio(this, 'marketing')">
-          Marketing
-        </button>
-        <button class="filter-btn" onclick="filterPortfolio(this, 'brand')">
-          Branding
-        </button>
-      </div>
-      <div class="portfolio-grid reveal">
-        <div class="p-card" data-cat="design dev">
-          <div
-            class="p-bg pc1"
-            role="img"
-            aria-label="Fashion e-commerce storefront"
-          ></div>
-          <div class="p-overlay">
-            <div class="p-tag">E-Commerce · Design</div>
-            <h3>Luminary Fashion Store Redesign</h3>
-          </div>
-        </div>
-        <div class="p-card" data-cat="dev design">
-          <div
-            class="p-bg pc2"
-            role="img"
-            aria-label="Mobile banking application"
-          ></div>
-          <div class="p-overlay">
-            <div class="p-tag">Mobile App · Development</div>
-            <h3>Veridian Banking App</h3>
-          </div>
-        </div>
-        <div class="p-card" data-cat="brand marketing">
-          <div
-            class="p-bg pc3"
-            role="img"
-            aria-label="Smartphone mobile experience for a wellness brand relaunch"
-          ></div>
-          <div class="p-overlay">
-            <div class="p-tag">Branding · Marketing</div>
-            <h3>Verdure Wellness Rebrand</h3>
-          </div>
-        </div>
-        <div class="p-card" data-cat="dev marketing">
-          <div
-            class="p-bg pc4"
-            role="img"
-            aria-label="SaaS analytics dashboard"
-          ></div>
-          <div class="p-overlay">
-            <div class="p-tag">SaaS · Development</div>
-            <h3>LaunchPad B2B Platform</h3>
-          </div>
-        </div>
-        <div class="p-card" data-cat="marketing">
-          <div
-            class="p-bg pc5"
-            role="img"
-            aria-label="Digital marketing analytics"
-          ></div>
-          <div class="p-overlay">
-            <div class="p-tag">Digital Marketing</div>
-            <h3>Resonance 5x Traffic Growth</h3>
-          </div>
-        </div>
-        <div class="p-card" data-cat="design dev">
-          <div
-            class="p-bg pc6"
-            role="img"
-            aria-label="Doctor with tablet working in a hospital"
-          ></div>
-          <div class="p-overlay">
-            <div class="p-tag">Healthcare · Design</div>
-            <h3>MediCore Patient Portal</h3>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ CASE STUDIES ══ -->
-    <section id="cases">
-      <div class="section-hd reveal">
-        <div class="section-chip">Case Studies</div>
-        <h2 class="section-h2">Real Clients. Real <em>Results.</em></h2>
-        <p class="section-p">
-          See exactly what we did, how we did it, and what changed for these
-          businesses.
+      <div class="proc-step">
+        <div class="proc-num">2</div>
+        <h4>Strategy & Proposal</h4>
+        <p>
+          We put together a clear plan, timeline, and price. You decide if
+          we're the right fit.
         </p>
       </div>
-      <div class="cases-grid reveal">
-        <div class="case-card">
-          <div class="case-hero">
-            <img
-              src="assets/images/cases/case-retail-900.webp"
-              srcset="
+      <div class="proc-step">
+        <div class="proc-num">3</div>
+        <h4>Design & Build</h4>
+        <p>
+          Your dedicated team gets to work. You'll see progress weekly and can
+          give feedback anytime.
+        </p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">4</div>
+        <h4>Review & Refine</h4>
+        <p>
+          We test everything thoroughly and make changes based on your
+          feedback before going live.
+        </p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">5</div>
+        <h4>Launch & Support</h4>
+        <p>
+          We go live, track results, and stay available to support you as your
+          business grows.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ STAFFING ══ -->
+  <section id="staffing">
+    <div class="staffing-wrap">
+      <div>
+        <div class="section-chip reveal">IT Staffing</div>
+        <h2 class="section-h2 reveal">
+          Hire Tech Talent in <em>Days, Not Months</em>
+        </h2>
+        <p class="section-p reveal">
+          Finding great developers, designers, and analysts on your own takes
+          time you don't have. We give you access to a pool of pre-vetted
+          professionals — ready to work exactly how you need them to.
+        </p>
+        <div class="staffing-models">
+          <div class="s-model reveal">
+            <h4>🧑‍💻 Dedicated Full-Time Hire</h4>
+            <p>
+              One person, fully committed to your team. Works your hours,
+              joins your standups, and becomes part of your culture — without
+              the overhead of direct employment.
+            </p>
+          </div>
+          <div class="s-model reveal">
+            <h4>🏗️ Project-Based Team</h4>
+            <p>
+              Need a whole squad for a specific project? We put together the
+              exact mix of skills you need — designers, developers, QA — and
+              you only pay for the time you use.
+            </p>
+          </div>
+          <div class="s-model reveal">
+            <h4>🔄 Flexible Contract Talent</h4>
+            <p>
+              Scale your team up or down as demand changes. Great for
+              businesses that have variable workloads or want to test a hire
+              before committing long-term.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="staffing-right reveal">
+        <h3>Roles We Fill Quickly</h3>
+        <div class="team-builder">
+          <div class="t-role">
+            <div class="ico">💻</div>
+            <div class="nm">Full Stack Dev</div>
+          </div>
+          <div class="t-role">
+            <div class="ico">🎨</div>
+            <div class="nm">UI/UX Designer</div>
+          </div>
+          <div class="t-role">
+            <div class="ico">📱</div>
+            <div class="nm">Mobile Dev</div>
+          </div>
+          <div class="t-role">
+            <div class="ico">☁️</div>
+            <div class="nm">DevOps / Cloud</div>
+          </div>
+          <div class="t-role">
+            <div class="ico">🤖</div>
+            <div class="nm">AI / ML Engineer</div>
+          </div>
+          <div class="t-role">
+            <div class="ico">🧪</div>
+            <div class="nm">QA Engineer</div>
+          </div>
+          <div class="t-role">
+            <div class="ico">📊</div>
+            <div class="nm">Data Analyst</div>
+          </div>
+          <div class="t-role">
+            <div class="ico">🔐</div>
+            <div class="nm">Security Expert</div>
+          </div>
+          <div class="t-role">
+            <div class="ico">🧩</div>
+            <div class="nm">Product Manager</div>
+          </div>
+        </div>
+        <div class="staffing-note">
+          ⚡ Most placements completed within 7 business days
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PORTFOLIO ══ -->
+  <section id="portfolio">
+    <div class="section-hd reveal">
+      <div class="section-chip">Our Work</div>
+      <h2 class="section-h2">Projects We're <em>Proud Of</em></h2>
+      <p class="section-p">
+        A sample of work across industries — from e-commerce to healthcare to
+        SaaS.
+      </p>
+    </div>
+    <div class="filter-row reveal">
+      <button class="filter-btn active" onclick="filterPortfolio(this, 'all')">
+        All
+      </button>
+      <button class="filter-btn" onclick="filterPortfolio(this, 'design')">
+        Design
+      </button>
+      <button class="filter-btn" onclick="filterPortfolio(this, 'dev')">
+        Development
+      </button>
+      <button class="filter-btn" onclick="filterPortfolio(this, 'marketing')">
+        Marketing
+      </button>
+      <button class="filter-btn" onclick="filterPortfolio(this, 'brand')">
+        Branding
+      </button>
+    </div>
+    <div class="portfolio-grid reveal">
+      <div class="p-card" data-cat="design dev">
+        <div class="p-bg pc1" role="img" aria-label="Fashion e-commerce storefront"></div>
+        <div class="p-overlay">
+          <div class="p-tag">E-Commerce · Design</div>
+          <h3>Luminary Fashion Store Redesign</h3>
+        </div>
+      </div>
+      <div class="p-card" data-cat="dev design">
+        <div class="p-bg pc2" role="img" aria-label="Mobile banking application"></div>
+        <div class="p-overlay">
+          <div class="p-tag">Mobile App · Development</div>
+          <h3>Veridian Banking App</h3>
+        </div>
+      </div>
+      <div class="p-card" data-cat="brand marketing">
+        <div class="p-bg pc3" role="img" aria-label="Smartphone mobile experience for a wellness brand relaunch"></div>
+        <div class="p-overlay">
+          <div class="p-tag">Branding · Marketing</div>
+          <h3>Verdure Wellness Rebrand</h3>
+        </div>
+      </div>
+      <div class="p-card" data-cat="dev marketing">
+        <div class="p-bg pc4" role="img" aria-label="SaaS analytics dashboard"></div>
+        <div class="p-overlay">
+          <div class="p-tag">SaaS · Development</div>
+          <h3>LaunchPad B2B Platform</h3>
+        </div>
+      </div>
+      <div class="p-card" data-cat="marketing">
+        <div class="p-bg pc5" role="img" aria-label="Digital marketing analytics"></div>
+        <div class="p-overlay">
+          <div class="p-tag">Digital Marketing</div>
+          <h3>Resonance 5x Traffic Growth</h3>
+        </div>
+      </div>
+      <div class="p-card" data-cat="design dev">
+        <div class="p-bg pc6" role="img" aria-label="Doctor with tablet working in a hospital"></div>
+        <div class="p-overlay">
+          <div class="p-tag">Healthcare · Design</div>
+          <h3>MediCore Patient Portal</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CASE STUDIES ══ -->
+  <section id="cases">
+    <div class="section-hd reveal">
+      <div class="section-chip">Case Studies</div>
+      <h2 class="section-h2">Real Clients. Real <em>Results.</em></h2>
+      <p class="section-p">
+        See exactly what we did, how we did it, and what changed for these
+        businesses.
+      </p>
+    </div>
+    <div class="cases-grid reveal">
+      <div class="case-card">
+        <div class="case-hero">
+          <img src="assets/images/cases/case-retail-900.webp" srcset="
                 assets/images/cases/case-retail-480.webp   480w,
                 assets/images/cases/case-retail-720.webp   720w,
                 assets/images/cases/case-retail-900.webp   900w,
                 assets/images/cases/case-retail-1200.webp 1200w
-              "
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 900px"
-              alt="Modern fashion retail storefront with curated clothing displays"
-              width="900"
-              height="506"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div class="case-body">
-            <div class="case-chip">E-Commerce</div>
-            <h3>How We Grew Luminary's Revenue by 340%</h3>
-            <p>
-              We redesigned Luminary's entire online store and paired it with a
-              targeted paid ads campaign. Within 6 months, their sales more than
-              tripled — with no increase in their ad budget.
-            </p>
-            <div class="case-metrics">
-              <div class="case-metric">
-                <span class="case-val">340%</span
-                ><span class="case-lbl">Revenue Growth</span>
-              </div>
-              <div class="case-metric">
-                <span class="case-val">2.8×</span
-                ><span class="case-lbl">Conversion Rate</span>
-              </div>
-              <div class="case-metric">
-                <span class="case-val">-48%</span
-                ><span class="case-lbl">Bounce Rate</span>
-              </div>
+              " sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 900px"
+            alt="Modern fashion retail storefront with curated clothing displays" width="900" height="506"
+            loading="lazy" decoding="async" />
+        </div>
+        <div class="case-body">
+          <div class="case-chip">E-Commerce</div>
+          <h3>How We Grew Luminary's Revenue by 340%</h3>
+          <p>
+            We redesigned Luminary's entire online store and paired it with a
+            targeted paid ads campaign. Within 6 months, their sales more than
+            tripled — with no increase in their ad budget.
+          </p>
+          <div class="case-metrics">
+            <div class="case-metric">
+              <span class="case-val">340%</span><span class="case-lbl">Revenue Growth</span>
+            </div>
+            <div class="case-metric">
+              <span class="case-val">2.8×</span><span class="case-lbl">Conversion Rate</span>
+            </div>
+            <div class="case-metric">
+              <span class="case-val">-48%</span><span class="case-lbl">Bounce Rate</span>
             </div>
           </div>
         </div>
-        <div class="case-card">
-          <div class="case-hero">
-            <img
-              src="assets/images/cases/case-banking-900.webp"
-              srcset="
+      </div>
+      <div class="case-card">
+        <div class="case-hero">
+          <img src="assets/images/cases/case-banking-900.webp" srcset="
                 assets/images/cases/case-banking-480.webp   480w,
                 assets/images/cases/case-banking-720.webp   720w,
                 assets/images/cases/case-banking-900.webp   900w,
                 assets/images/cases/case-banking-1200.webp 1200w
-              "
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 900px"
-              alt="Person using a mobile banking app on smartphone"
-              width="900"
-              height="506"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div class="case-body">
-            <div class="case-chip">Mobile App</div>
-            <h3>Veridian: 500,000 Users in 6 Months</h3>
-            <p>
-              We built Veridian's challenger banking app from scratch — product
-              design, development, and App Store launch. It now has 500K users
-              and a near-perfect rating.
-            </p>
-            <div class="case-metrics">
-              <div class="case-metric">
-                <span class="case-val">500K</span
-                ><span class="case-lbl">Users</span>
-              </div>
-              <div class="case-metric">
-                <span class="case-val">4.8★</span
-                ><span class="case-lbl">App Store Rating</span>
-              </div>
-              <div class="case-metric">
-                <span class="case-val">6 mo</span
-                ><span class="case-lbl">Time to Launch</span>
-              </div>
+              " sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 900px"
+            alt="Person using a mobile banking app on smartphone" width="900" height="506" loading="lazy"
+            decoding="async" />
+        </div>
+        <div class="case-body">
+          <div class="case-chip">Mobile App</div>
+          <h3>Veridian: 500,000 Users in 6 Months</h3>
+          <p>
+            We built Veridian's challenger banking app from scratch — product
+            design, development, and App Store launch. It now has 500K users
+            and a near-perfect rating.
+          </p>
+          <div class="case-metrics">
+            <div class="case-metric">
+              <span class="case-val">500K</span><span class="case-lbl">Users</span>
+            </div>
+            <div class="case-metric">
+              <span class="case-val">4.8★</span><span class="case-lbl">App Store Rating</span>
+            </div>
+            <div class="case-metric">
+              <span class="case-val">6 mo</span><span class="case-lbl">Time to Launch</span>
             </div>
           </div>
         </div>
-        <div class="case-card">
-          <div class="case-hero">
-            <img
-              src="assets/images/cases/case-wellness-900.webp"
-              srcset="
+      </div>
+      <div class="case-card">
+        <div class="case-hero">
+          <img src="assets/images/cases/case-wellness-900.webp" srcset="
                 assets/images/cases/case-wellness-480.webp   480w,
                 assets/images/cases/case-wellness-720.webp   720w,
                 assets/images/cases/case-wellness-900.webp   900w,
                 assets/images/cases/case-wellness-1200.webp 1200w
-              "
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 900px"
-              alt="Hands holding a smartphone for a wellness brand mobile experience"
-              width="900"
-              height="506"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div class="case-body">
-            <div class="case-chip">Brand Transformation</div>
-            <h3>Verdure: Bringing a 20-Year Brand Into the Digital Age</h3>
-            <p>
-              Verdure had loyal customers but an outdated brand. We rebuilt
-              their identity, relaunched their website, and set them up for D2C
-              sales — all in 3 months.
-            </p>
-            <div class="case-metrics">
-              <div class="case-metric">
-                <span class="case-val">220%</span
-                ><span class="case-lbl">Brand Awareness</span>
-              </div>
-              <div class="case-metric">
-                <span class="case-val">$4.2M</span
-                ><span class="case-lbl">New Revenue</span>
-              </div>
-              <div class="case-metric">
-                <span class="case-val">3 mo</span
-                ><span class="case-lbl">Launch Time</span>
-              </div>
+              " sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 900px"
+            alt="Hands holding a smartphone for a wellness brand mobile experience" width="900" height="506"
+            loading="lazy" decoding="async" />
+        </div>
+        <div class="case-body">
+          <div class="case-chip">Brand Transformation</div>
+          <h3>Verdure: Bringing a 20-Year Brand Into the Digital Age</h3>
+          <p>
+            Verdure had loyal customers but an outdated brand. We rebuilt
+            their identity, relaunched their website, and set them up for D2C
+            sales — all in 3 months.
+          </p>
+          <div class="case-metrics">
+            <div class="case-metric">
+              <span class="case-val">220%</span><span class="case-lbl">Brand Awareness</span>
+            </div>
+            <div class="case-metric">
+              <span class="case-val">$4.2M</span><span class="case-lbl">New Revenue</span>
+            </div>
+            <div class="case-metric">
+              <span class="case-val">3 mo</span><span class="case-lbl">Launch Time</span>
             </div>
           </div>
         </div>
-        <div class="case-card">
-          <div class="case-hero">
-            <img
-              src="assets/images/cases/case-b2b-900.webp"
-              srcset="
+      </div>
+      <div class="case-card">
+        <div class="case-hero">
+          <img src="assets/images/cases/case-b2b-900.webp" srcset="
                 assets/images/cases/case-b2b-480.webp   480w,
                 assets/images/cases/case-b2b-720.webp   720w,
                 assets/images/cases/case-b2b-900.webp   900w,
                 assets/images/cases/case-b2b-1200.webp 1200w
-              "
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 900px"
-              alt="Product team collaborating on a B2B software platform in a modern office"
-              width="900"
-              height="506"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <div class="case-body">
-            <div class="case-chip">SaaS Product</div>
-            <h3>LaunchPad: Zero to $2M Annual Revenue in One Year</h3>
-            <p>
-              We took LaunchPad from a whiteboard idea to a fully shipped B2B
-              SaaS product — including market research, design, full-stack
-              development, and go-to-market strategy.
-            </p>
-            <div class="case-metrics">
-              <div class="case-metric">
-                <span class="case-val">$2M</span
-                ><span class="case-lbl">Year 1 Revenue</span>
-              </div>
-              <div class="case-metric">
-                <span class="case-val">84</span
-                ><span class="case-lbl">Business Clients</span>
-              </div>
-              <div class="case-metric">
-                <span class="case-val">12 mo</span
-                ><span class="case-lbl">Full Build</span>
-              </div>
-            </div>
-          </div>
+              " sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 900px"
+            alt="Product team collaborating on a B2B software platform in a modern office" width="900" height="506"
+            loading="lazy" decoding="async" />
         </div>
-      </div>
-    </section>
-
-    <!-- ══ TESTIMONIALS ══ -->
-    <section id="testimonials">
-      <div class="section-hd center reveal">
-        <div class="section-chip">Client Reviews</div>
-        <h2 class="section-h2">
-          Don't Take Our Word for It — <em>Hear From Clients</em>
-        </h2>
-        <p class="section-p">
-          We've helped businesses across India, the US, and Europe. Here's what
-          a few of them have to say.
-        </p>
-      </div>
-      <div class="testi-grid reveal">
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <div class="testi-q">"</div>
-          <p class="testi-text">
-            Qubrisource didn't just build us a website — they built us a growth
-            machine. Our sales tripled in the first three months. They actually
-            care about your results, not just the project.
-          </p>
-          <div class="testi-author">
-            <div class="testi-av">👩‍💼</div>
-            <div>
-              <div class="testi-name">Sarah Mitchell</div>
-              <div class="testi-role">CMO, Luminary Fashion</div>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <div class="testi-q">"</div>
-          <p class="testi-text">
-            The developers Qubrisource placed with us felt like full-time
-            employees from day one — sharp, proactive, and deeply committed. I'd
-            recommend them to any tech team that needs to scale quickly.
-          </p>
-          <div class="testi-author">
-            <div class="testi-av">👨‍💻</div>
-            <div>
-              <div class="testi-name">Rahul Desai</div>
-              <div class="testi-role">CTO, Veridian Bank</div>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <div class="testi-q">"</div>
-          <p class="testi-text">
-            From brand strategy to the final website — Qubrisource transformed
-            how we show up online. The rebrand gave us a whole new level of
-            confidence when talking to customers and investors alike.
-          </p>
-          <div class="testi-author">
-            <div class="testi-av">👩</div>
-            <div>
-              <div class="testi-name">Priya Sharma</div>
-              <div class="testi-role">CEO, Verdure Wellness</div>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <div class="testi-q">"</div>
-          <p class="testi-text">
-            We went from idea to $2M in revenue in a year, with Qubrisource by
-            our side the whole way. Their product team thinks like founders —
-            they challenge assumptions and push for what actually works.
-          </p>
-          <div class="testi-author">
-            <div class="testi-av">🧑‍🚀</div>
-            <div>
-              <div class="testi-name">Alex Chen</div>
-              <div class="testi-role">Founder, LaunchPad</div>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <div class="testi-q">"</div>
-          <p class="testi-text">
-            Our organic traffic grew 5× in 8 months — without paid ads. The
-            marketing team at Qubrisource is the best I've worked with. They're
-            creative and data-driven at the same time, which is rare.
-          </p>
-          <div class="testi-author">
-            <div class="testi-av">👨‍🎨</div>
-            <div>
-              <div class="testi-name">Marcus Williams</div>
-              <div class="testi-role">VP Marketing, Resonance</div>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <div class="testi-q">"</div>
-          <p class="testi-text">
-            Our patient portal used to frustrate everyone. Qubrisource
-            redesigned it and patient satisfaction jumped 40%. They really
-            listened to what our users needed — not just what looked impressive.
-          </p>
-          <div class="testi-author">
-            <div class="testi-av">🩺</div>
-            <div>
-              <div class="testi-name">Dr. Anita Patel</div>
-              <div class="testi-role">Director, MediCore Health</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ TEAM ══ -->
-    <section id="team">
-      <div class="section-hd center reveal">
-        <div class="section-chip">Our Team</div>
-        <h2 class="section-h2">
-          The People Who'll <em>Work on Your Project</em>
-        </h2>
-        <p class="section-p">
-          Strategists, designers, engineers, and marketers — working together on
-          every project we take on.
-        </p>
-      </div>
-      <div class="team-carousel-wrap reveal" id="teamCarousel">
-        <div class="team-carousel">
-          <button
-            type="button"
-            class="team-carousel-btn team-carousel-prev"
-            aria-label="Previous team members"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M15 18l-6-6 6-6" />
-            </svg>
-          </button>
-          <div class="team-carousel-viewport">
-            <div class="team-carousel-track">
-              <article class="team-card">
-                <div class="team-photo">
-                  <span class="team-initials">DS</span
-                  ><!-- <img src="assets/images/team/dharani.jpg" alt="Dharani Sivakumar" class="team-img"> -->
-                </div>
-                <div class="team-info">
-                  <h4>Dharani Sivakumar</h4>
-                  <div class="role">Founder &amp; Managing Director</div>
-                  <div class="team-socials">
-                    <a href="#" aria-label="LinkedIn">in</a
-                    ><a href="#" aria-label="X">𝕏</a
-                    ><a href="#" aria-label="Email">✉</a>
-                  </div>
-                </div>
-              </article>
-              <article class="team-card">
-                <div class="team-photo">
-                  <span class="team-initials">SA</span
-                  ><!-- <img src="assets/images/team/sivakumar.jpg" alt="Sivakumar Annaiah" class="team-img"> -->
-                </div>
-                <div class="team-info">
-                  <h4>Sivakumar Annaiah</h4>
-                  <div class="role">Director</div>
-                  <div class="team-socials">
-                    <a href="#" aria-label="LinkedIn">in</a
-                    ><a href="#" aria-label="X">𝕏</a
-                    ><a href="#" aria-label="Email">✉</a>
-                  </div>
-                </div>
-              </article>
-              <article class="team-card">
-                <div class="team-photo">
-                  <span class="team-initials">KR</span
-                  ><!-- <img src="assets/images/team/kavitha.jpg" alt="Kavitha R" class="team-img"> -->
-                </div>
-                <div class="team-info">
-                  <h4>Kavitha R</h4>
-                  <div class="role">Head of Finance</div>
-                  <div class="team-socials">
-                    <a href="#" aria-label="LinkedIn">in</a
-                    ><a href="#" aria-label="X">𝕏</a
-                    ><a href="#" aria-label="Email">✉</a>
-                  </div>
-                </div>
-              </article>
-              <article class="team-card">
-                <div class="team-photo">
-                  <span class="team-initials">V</span
-                  ><!-- <img src="assets/images/team/veganandam.jpg" alt="Veganandam" class="team-img"> -->
-                </div>
-                <div class="team-info">
-                  <h4>Veganandam</h4>
-                  <div class="role">Chief Administrative Officer</div>
-                  <div class="team-socials">
-                    <a href="#" aria-label="LinkedIn">in</a
-                    ><a href="#" aria-label="X">𝕏</a
-                    ><a href="#" aria-label="Email">✉</a>
-                  </div>
-                </div>
-              </article>
-              <article class="team-card">
-                <div class="team-photo">
-                  <span class="team-initials">MR</span
-                  ><!-- <img src="assets/images/team/madan.jpg" alt="Madan R" class="team-img"> -->
-                </div>
-                <div class="team-info">
-                  <h4>Madan R</h4>
-                  <div class="role">Head of Operations</div>
-                  <div class="team-socials">
-                    <a href="#" aria-label="LinkedIn">in</a
-                    ><a href="#" aria-label="X">𝕏</a
-                    ><a href="#" aria-label="Email">✉</a>
-                  </div>
-                </div>
-              </article>
-              <article class="team-card">
-                <div class="team-photo">
-                  <span class="team-initials">PR</span
-                  ><!-- <img src="assets/images/team/pavitha.jpg" alt="Pavitha R" class="team-img"> -->
-                </div>
-                <div class="team-info">
-                  <h4>Pavitha R</h4>
-                  <div class="role">Business Development Manager</div>
-                  <div class="team-socials">
-                    <a href="#" aria-label="LinkedIn">in</a
-                    ><a href="#" aria-label="X">𝕏</a
-                    ><a href="#" aria-label="Email">✉</a>
-                  </div>
-                </div>
-              </article>
-              <article class="team-card">
-                <div class="team-photo">
-                  <span class="team-initials">CS</span
-                  ><!-- <img src="assets/images/team/charan.jpg" alt="Charan S" class="team-img"> -->
-                </div>
-                <div class="team-info">
-                  <h4>Charan S</h4>
-                  <div class="role">Head of Business Sales</div>
-                  <div class="team-socials">
-                    <a href="#" aria-label="LinkedIn">in</a
-                    ><a href="#" aria-label="X">𝕏</a
-                    ><a href="#" aria-label="Email">✉</a>
-                  </div>
-                </div>
-              </article>
-              <article class="team-card">
-                <div class="team-photo">
-                  <span class="team-initials">SMA</span
-                  ><!-- <img src="assets/images/team/ashraf.jpg" alt="Syed Mohammad Ashraf" class="team-img"> -->
-                </div>
-                <div class="team-info">
-                  <h4>Syed Mohammad Ashraf</h4>
-                  <div class="role">Lead UI/UX Designer</div>
-                  <div class="team-socials">
-                    <a href="#" aria-label="LinkedIn">in</a
-                    ><a href="#" aria-label="X">𝕏</a
-                    ><a href="#" aria-label="Email">✉</a>
-                  </div>
-                </div>
-              </article>
-              <article class="team-card">
-                <div class="team-photo">
-                  <span class="team-initials">AM</span
-                  ><!-- <img src="assets/images/team/arthif.jpg" alt="Arthif M" class="team-img"> -->
-                </div>
-                <div class="team-info">
-                  <h4>Arthif M</h4>
-                  <div class="role">Sr. Marketing &amp; Graphic Designer</div>
-                  <div class="team-socials">
-                    <a href="#" aria-label="LinkedIn">in</a
-                    ><a href="#" aria-label="X">𝕏</a
-                    ><a href="#" aria-label="Email">✉</a>
-                  </div>
-                </div>
-              </article>
-              <article class="team-card">
-                <div class="team-photo">
-                  <span class="team-initials">S</span
-                  ><!-- <img src="assets/images/team/swetha.jpg" alt="Swetha" class="team-img"> -->
-                </div>
-                <div class="team-info">
-                  <h4>Swetha</h4>
-                  <div class="role">Sr. Web Developer</div>
-                  <div class="team-socials">
-                    <a href="#" aria-label="LinkedIn">in</a
-                    ><a href="#" aria-label="X">𝕏</a
-                    ><a href="#" aria-label="Email">✉</a>
-                  </div>
-                </div>
-              </article>
-              <article class="team-card">
-                <div class="team-photo">
-                  <span class="team-initials">S</span
-                  ><!-- <img src="assets/images/team/sandhya.jpg" alt="Sandhya" class="team-img"> -->
-                </div>
-                <div class="team-info">
-                  <h4>Sandhya</h4>
-                  <div class="role">HR Recruiter</div>
-                  <div class="team-socials">
-                    <a href="#" aria-label="LinkedIn">in</a
-                    ><a href="#" aria-label="X">𝕏</a
-                    ><a href="#" aria-label="Email">✉</a>
-                  </div>
-                </div>
-              </article>
-              <article class="team-card">
-                <div class="team-photo">
-                  <span class="team-initials">T</span
-                  ><!-- <img src="assets/images/team/thabraz.jpg" alt="Thabraz" class="team-img"> -->
-                </div>
-                <div class="team-info">
-                  <h4>Thabraz</h4>
-                  <div class="role">Associate HR Manager</div>
-                  <div class="team-socials">
-                    <a href="#" aria-label="LinkedIn">in</a
-                    ><a href="#" aria-label="X">𝕏</a
-                    ><a href="#" aria-label="Email">✉</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-          <button
-            type="button"
-            class="team-carousel-btn team-carousel-next"
-            aria-label="Next team members"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M9 18l6-6-6-6" />
-            </svg>
-          </button>
-        </div>
-        <div
-          class="team-carousel-dots"
-          role="tablist"
-          aria-label="Team carousel pages"
-        ></div>
-      </div>
-    </section>
-
-    <!-- ══ BLOG ══ -->
-    <section id="blog">
-      <div class="section-hd reveal">
-        <div class="section-chip">From the Blog</div>
-        <h2 class="section-h2">
-          Practical Tips to Grow Your <em>Business Online</em>
-        </h2>
-        <p class="section-p">
-          No filler. No buzzwords. Just useful, straightforward guides written
-          by the people who actually do this work.
-        </p>
-      </div>
-      <div class="blog-grid reveal" id="blog-grid"></div>
-    </section>
-
-    <!-- ══ CONTACT ══ -->
-    <section id="contact">
-      <div class="section-chip reveal">Get a Free Quote</div>
-      <h2 class="section-h2 reveal">
-        Tell Us About Your Project. <em>We'll Get Back to You Today.</em>
-      </h2>
-      <p class="section-p reveal">
-        Fill in the form and we'll send you a custom proposal within 24 hours —
-        at no charge and with no obligation.
-      </p>
-      <form
-        id="quote-form"
-        class="contact-form reveal"
-        action="https://forms.zohopublic.in/qubrisource1/form/QubriSourceContactForm/formperma/r05jrD4DOIdt_5fMtWCrNlu46TqC8VdrXFI1TLtUD-k/htmlRecords/submit"
-        method="POST"
-        accept-charset="UTF-8"
-        enctype="multipart/form-data"
-        target="zoho-submit-frame"
-      >
-        <input type="hidden" name="zf_referrer_name" value="" />
-        <input type="hidden" name="zc_gad" value="" />
-        <div class="form-row">
-          <div class="f-group">
-            <label for="quote-first-name">First Name</label>
-            <input
-              type="text"
-              id="quote-first-name"
-              name="Name_First"
-              maxlength="255"
-              placeholder="Your first name"
-              required
-            />
-          </div>
-          <div class="f-group">
-            <label for="quote-last-name">Last Name</label>
-            <input
-              type="text"
-              id="quote-last-name"
-              name="Name_Last"
-              maxlength="255"
-              placeholder="Your last name"
-              required
-            />
-          </div>
-        </div>
-        <div class="f-group">
-          <label for="quote-email">Work Email</label>
-          <input
-            type="email"
-            id="quote-email"
-            name="Email"
-            maxlength="255"
-            placeholder="you@yourcompany.com"
-            required
-          />
-        </div>
-        <div class="f-group">
-          <label for="quote-company">Company Name</label>
-          <input
-            type="text"
-            id="quote-company"
-            name="SingleLine"
-            maxlength="255"
-            placeholder="Your company name"
-          />
-        </div>
-        <div class="f-group">
-          <label for="quote-service">What Do You Need Help With?</label>
-          <select id="quote-service" name="Dropdown" required>
-            <option value="" disabled selected>Choose a service...</option>
-            <option value="Software Development">Software Development</option>
-            <option value="UI/UX Design">UI/UX Design</option>
-            <option value="Digital Marketing">Digital Marketing</option>
-            <option value="Brand Identity">Brand Identity</option>
-            <option value="Product Strategy">Product Strategy</option>
-            <option value="IT Staffing">IT Staffing</option>
-            <option value="More than one service">More than one service</option>
-          </select>
-        </div>
-        <div class="f-group">
-          <label for="quote-message">Tell Us More</label>
-          <textarea
-            id="quote-message"
-            name="MultiLine"
-            maxlength="65535"
-            placeholder="What are you trying to achieve? What's your timeline and rough budget?"
-          ></textarea>
-        </div>
-        <button type="submit" class="btn-submit">
-          Send My Free Quote Request →
-        </button>
-      </form>
-      <div class="contact-alts reveal">
-        <a href="mailto:sales@qubrisource.com" class="contact-alt"
-          ><span>✉️</span> sales@qubrisource.com</a
-        >
-        <a href="tel:+918125154397" class="contact-alt"
-          ><span>📞</span> +91 81251 54397</a
-        >
-        <a href="#" class="contact-alt"><span>📍</span> Bangalore, India</a>
-      </div>
-    </section>
-
-    <!-- ══ FOOTER ══ -->
-    <footer>
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a class="footer-logo" href="#"
-            ><span class="logo-q">Qubri</span>source</a
-          >
+        <div class="case-body">
+          <div class="case-chip">SaaS Product</div>
+          <h3>LaunchPad: Zero to $2M Annual Revenue in One Year</h3>
           <p>
-            Helping businesses grow through better design, smarter marketing,
-            and reliable software — since 2012.
+            We took LaunchPad from a whiteboard idea to a fully shipped B2B
+            SaaS product — including market research, design, full-stack
+            development, and go-to-market strategy.
           </p>
-          <div class="footer-socials">
-            <a href="#">in</a><a href="#">𝕏</a><a href="#">fb</a
-            ><a href="#">ig</a><a href="#">gh</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h5>Services</h5>
-          <ul>
-            <li><a href="#">Software Development</a></li>
-            <li><a href="#">UI/UX Design</a></li>
-            <li><a href="#">Digital Marketing</a></li>
-            <li><a href="#">Brand Identity</a></li>
-            <li><a href="#">Product Strategy</a></li>
-            <li><a href="#">IT Staffing</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Company</h5>
-          <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Our Work</a></li>
-            <li><a href="#">Case Studies</a></li>
-            <li><a href="#">Our Team</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Get in Touch</h5>
-          <ul>
-            <li>
-              <a href="mailto:sales@qubrisource.com">sales@qubrisource.com</a>
-            </li>
-            <li><a href="tel:+918125154397">+91 81251 54397</a></li>
-            <li><a href="#">Bangalore, India</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2025 Qubrisource. All rights reserved.</p>
-        <span class="footer-badge">◆ Built in Bangalore, India</span>
-      </div>
-    </footer>
-
-    <iframe
-      name="zoho-submit-frame"
-      id="zoho-submit-frame"
-      title="Form submission"
-      hidden
-    ></iframe>
-
-    <div
-      class="modal fade"
-      id="formSuccessModal"
-      tabindex="-1"
-      aria-labelledby="formSuccessModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content form-success-modal">
-          <div class="modal-body text-center">
-            <div class="form-success-icon" aria-hidden="true">✓</div>
-            <h2 class="form-success-title" id="formSuccessModalLabel">
-              Request Submitted
-            </h2>
-            <p class="form-success-text">
-              Thank you! Your form has been submitted successfully. We'll get
-              back to you within 24 hours.
-            </p>
-            <button
-              type="button"
-              class="btn btn-primary form-success-btn"
-              data-bs-dismiss="modal"
-            >
-              Got it
-            </button>
+          <div class="case-metrics">
+            <div class="case-metric">
+              <span class="case-val">$2M</span><span class="case-lbl">Year 1 Revenue</span>
+            </div>
+            <div class="case-metric">
+              <span class="case-val">84</span><span class="case-lbl">Business Clients</span>
+            </div>
+            <div class="case-metric">
+              <span class="case-val">12 mo</span><span class="case-lbl">Full Build</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script src="assets/js/images.js" defer></script>
-    <script src="assets/js/blog-data.js" defer></script>
-    <script src="assets/js/blog.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
-  </body>
+  <!-- ══ TESTIMONIALS ══ -->
+  <section id="testimonials">
+    <div class="section-hd center reveal">
+      <div class="section-chip">Client Reviews</div>
+      <h2 class="section-h2">
+        Don't Take Our Word for It — <em>Hear From Clients</em>
+      </h2>
+      <p class="section-p">
+        We've helped businesses across India, the US, and Europe. Here's what
+        a few of them have to say.
+      </p>
+    </div>
+    <div class="testi-grid reveal">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-q">"</div>
+        <p class="testi-text">
+          Qubrisource didn't just build us a website — they built us a growth
+          machine. Our sales tripled in the first three months. They actually
+          care about your results, not just the project.
+        </p>
+        <div class="testi-author">
+          <div class="testi-av">👩‍💼</div>
+          <div>
+            <div class="testi-name">Sarah Mitchell</div>
+            <div class="testi-role">CMO, Luminary Fashion</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-q">"</div>
+        <p class="testi-text">
+          The developers Qubrisource placed with us felt like full-time
+          employees from day one — sharp, proactive, and deeply committed. I'd
+          recommend them to any tech team that needs to scale quickly.
+        </p>
+        <div class="testi-author">
+          <div class="testi-av">👨‍💻</div>
+          <div>
+            <div class="testi-name">Rahul Desai</div>
+            <div class="testi-role">CTO, Veridian Bank</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-q">"</div>
+        <p class="testi-text">
+          From brand strategy to the final website — Qubrisource transformed
+          how we show up online. The rebrand gave us a whole new level of
+          confidence when talking to customers and investors alike.
+        </p>
+        <div class="testi-author">
+          <div class="testi-av">👩</div>
+          <div>
+            <div class="testi-name">Priya Sharma</div>
+            <div class="testi-role">CEO, Verdure Wellness</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-q">"</div>
+        <p class="testi-text">
+          We went from idea to $2M in revenue in a year, with Qubrisource by
+          our side the whole way. Their product team thinks like founders —
+          they challenge assumptions and push for what actually works.
+        </p>
+        <div class="testi-author">
+          <div class="testi-av">🧑‍🚀</div>
+          <div>
+            <div class="testi-name">Alex Chen</div>
+            <div class="testi-role">Founder, LaunchPad</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-q">"</div>
+        <p class="testi-text">
+          Our organic traffic grew 5× in 8 months — without paid ads. The
+          marketing team at Qubrisource is the best I've worked with. They're
+          creative and data-driven at the same time, which is rare.
+        </p>
+        <div class="testi-author">
+          <div class="testi-av">👨‍🎨</div>
+          <div>
+            <div class="testi-name">Marcus Williams</div>
+            <div class="testi-role">VP Marketing, Resonance</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-q">"</div>
+        <p class="testi-text">
+          Our patient portal used to frustrate everyone. Qubrisource
+          redesigned it and patient satisfaction jumped 40%. They really
+          listened to what our users needed — not just what looked impressive.
+        </p>
+        <div class="testi-author">
+          <div class="testi-av">🩺</div>
+          <div>
+            <div class="testi-name">Dr. Anita Patel</div>
+            <div class="testi-role">Director, MediCore Health</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TEAM ══ -->
+  <section id="team">
+    <div class="section-hd center reveal">
+      <div class="section-chip">Our Team</div>
+      <h2 class="section-h2">
+        The People Who'll <em>Work on Your Project</em>
+      </h2>
+      <p class="section-p">
+        Strategists, designers, engineers, and marketers — working together on
+        every project we take on.
+      </p>
+    </div>
+    <div class="team-carousel-wrap reveal" id="teamCarousel">
+      <div class="team-carousel">
+        <button type="button" class="team-carousel-btn team-carousel-prev" aria-label="Previous team members">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+        <div class="team-carousel-viewport">
+          <div class="team-carousel-track">
+            <article class="team-card">
+              <div class="team-photo">
+                <span
+                  class="team-initials">DS</span><!-- <img src="assets/images/team/dharani.jpg" alt="Dharani Sivakumar" class="team-img"> -->
+              </div>
+              <div class="team-info">
+                <h4>Dharani Sivakumar</h4>
+                <div class="role">Founder &amp; Managing Director</div>
+                <div class="team-socials">
+                  <a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="X">𝕏</a><a href="#"
+                    aria-label="Email">✉</a>
+                </div>
+              </div>
+            </article>
+            <article class="team-card">
+              <div class="team-photo">
+                <span
+                  class="team-initials">SA</span><!-- <img src="assets/images/team/sivakumar.jpg" alt="Sivakumar Annaiah" class="team-img"> -->
+              </div>
+              <div class="team-info">
+                <h4>Sivakumar Annaiah</h4>
+                <div class="role">Director</div>
+                <div class="team-socials">
+                  <a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="X">𝕏</a><a href="#"
+                    aria-label="Email">✉</a>
+                </div>
+              </div>
+            </article>
+            <article class="team-card">
+              <div class="team-photo">
+                <span
+                  class="team-initials">KR</span><!-- <img src="assets/images/team/kavitha.jpg" alt="Kavitha R" class="team-img"> -->
+              </div>
+              <div class="team-info">
+                <h4>Kavitha R</h4>
+                <div class="role">Head of Finance</div>
+                <div class="team-socials">
+                  <a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="X">𝕏</a><a href="#"
+                    aria-label="Email">✉</a>
+                </div>
+              </div>
+            </article>
+            <article class="team-card">
+              <div class="team-photo">
+                <span class="team-initials">V</span>
+                <img src="assets/images/team/veganandam.jpeg" alt="Veganandam" class="team-img">
+              </div>
+              <div class="team-info">
+                <h4>Veganandam</h4>
+                <div class="role">Chief Administrative Officer</div>
+                <div class="team-socials">
+                  <a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="X">𝕏</a><a href="#"
+                    aria-label="Email">✉</a>
+                </div>
+              </div>
+            </article>
+            <article class="team-card">
+              <div class="team-photo">
+                <span class="team-initials">MR</span>
+                <img src="assets/images/team/Madan.jpeg" alt="Madan R" class="team-img">
+              </div>
+              <div class="team-info">
+                <h4>Madan R</h4>
+                <div class="role">Head of Operations</div>
+                <div class="team-socials">
+                  <a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="X">𝕏</a><a href="#"
+                    aria-label="Email">✉</a>
+                </div>
+              </div>
+            </article>
+            <article class="team-card">
+              <div class="team-photo">
+                <span class="team-initials">PR</span>
+                <img src="assets/images/team/Pavitha.jpeg" alt="Pavitha R" class="team-img">
+              </div>
+              <div class="team-info">
+                <h4>Pavitha R</h4>
+                <div class="role">Business Development Manager</div>
+                <div class="team-socials">
+                  <a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="X">𝕏</a><a href="#"
+                    aria-label="Email">✉</a>
+                </div>
+              </div>
+            </article>
+            <article class="team-card">
+              <div class="team-photo">
+                <span class="team-initials">CS</span>
+                <img src="assets/images/team/Charan.jpeg" alt="Charan S" class="team-img">
+              </div>
+              <div class="team-info">
+                <h4>Charan S</h4>
+                <div class="role">Head of Business Sales</div>
+                <div class="team-socials">
+                  <a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="X">𝕏</a><a href="#"
+                    aria-label="Email">✉</a>
+                </div>
+              </div>
+            </article>
+            <article class="team-card">
+              <div class="team-photo">
+                <span class="team-initials">SMA</span>
+                <img src="assets/images/team/Ashraf.jpeg" alt="Syed Mohammad Ashraf" class="team-img">
+              </div>
+              <div class="team-info">
+                <h4>Syed Mohammad Ashraf</h4>
+                <div class="role">Lead UI/UX Designer</div>
+                <div class="team-socials">
+                  <a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="X">𝕏</a><a href="#"
+                    aria-label="Email">✉</a>
+                </div>
+              </div>
+            </article>
+            <article class="team-card">
+              <div class="team-photo">
+                <span class="team-initials">AM</span>
+                <img src="assets/images/team/Arthif.jpeg" alt="Arthif M" class="team-img">
+              </div>
+              <div class="team-info">
+                <h4>Arthif M</h4>
+                <div class="role">Sr. Marketing &amp; Graphic Designer</div>
+                <div class="team-socials">
+                  <a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="X">𝕏</a><a href="#"
+                    aria-label="Email">✉</a>
+                </div>
+              </div>
+            </article>
+            <article class="team-card">
+              <div class="team-photo">
+                <span
+                  class="team-initials">S</span><!-- <img src="assets/images/team/swetha.jpg" alt="Swetha" class="team-img"> -->
+              </div>
+              <div class="team-info">
+                <h4>Swetha</h4>
+                <div class="role">Sr. Web Developer</div>
+                <div class="team-socials">
+                  <a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="X">𝕏</a><a href="#"
+                    aria-label="Email">✉</a>
+                </div>
+              </div>
+            </article>
+            <article class="team-card">
+              <div class="team-photo">
+                <span class="team-initials">S</span>
+                <img src="assets/images/team/Sandhya.jpeg" alt="Sandhya" class="team-img">
+              </div>
+              <div class="team-info">
+                <h4>Sandhya</h4>
+                <div class="role">HR Recruiter</div>
+                <div class="team-socials">
+                  <a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="X">𝕏</a><a href="#"
+                    aria-label="Email">✉</a>
+                </div>
+              </div>
+            </article>
+            <article class="team-card">
+              <div class="team-photo">
+                <span class="team-initials">T</span>
+                <img src="assets/images/team/Thabraz.jpeg" alt="Thabraz" class="team-img">
+              </div>
+              <div class="team-info">
+                <h4>Thabraz</h4>
+                <div class="role">Associate HR Manager</div>
+                <div class="team-socials">
+                  <a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="X">𝕏</a><a href="#"
+                    aria-label="Email">✉</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <button type="button" class="team-carousel-btn team-carousel-next" aria-label="Next team members">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
+      </div>
+      <div class="team-carousel-dots" role="tablist" aria-label="Team carousel pages"></div>
+    </div>
+  </section>
+
+  <!-- ══ BLOG ══ -->
+  <section id="blog">
+    <div class="section-hd reveal">
+      <div class="section-chip">From the Blog</div>
+      <h2 class="section-h2">
+        Practical Tips to Grow Your <em>Business Online</em>
+      </h2>
+      <p class="section-p">
+        No filler. No buzzwords. Just useful, straightforward guides written
+        by the people who actually do this work.
+      </p>
+    </div>
+    <div class="blog-grid reveal" id="blog-grid"></div>
+  </section>
+
+  <!-- ══ CONTACT ══ -->
+  <section id="contact">
+    <div class="section-chip reveal">Get a Free Quote</div>
+    <h2 class="section-h2 reveal">
+      Tell Us About Your Project. <em>We'll Get Back to You Today.</em>
+    </h2>
+    <p class="section-p reveal">
+      Fill in the form and we'll send you a custom proposal within 24 hours —
+      at no charge and with no obligation.
+    </p>
+    <form id="quote-form" class="contact-form reveal"
+      action="https://forms.zohopublic.in/qubrisource1/form/QubriSourceContactForm/formperma/r05jrD4DOIdt_5fMtWCrNlu46TqC8VdrXFI1TLtUD-k/htmlRecords/submit"
+      method="POST" accept-charset="UTF-8" enctype="multipart/form-data" target="zoho-submit-frame">
+      <input type="hidden" name="zf_referrer_name" value="" />
+      <input type="hidden" name="zc_gad" value="" />
+      <div class="form-row">
+        <div class="f-group">
+          <label for="quote-first-name">First Name</label>
+          <input type="text" id="quote-first-name" name="Name_First" maxlength="255" placeholder="Your first name"
+            required />
+        </div>
+        <div class="f-group">
+          <label for="quote-last-name">Last Name</label>
+          <input type="text" id="quote-last-name" name="Name_Last" maxlength="255" placeholder="Your last name"
+            required />
+        </div>
+      </div>
+      <div class="f-group">
+        <label for="quote-email">Work Email</label>
+        <input type="email" id="quote-email" name="Email" maxlength="255" placeholder="you@yourcompany.com" required />
+      </div>
+      <div class="f-group">
+        <label for="quote-company">Company Name</label>
+        <input type="text" id="quote-company" name="SingleLine" maxlength="255" placeholder="Your company name" />
+      </div>
+      <div class="f-group">
+        <label for="quote-service">What Do You Need Help With?</label>
+        <select id="quote-service" name="Dropdown" required>
+          <option value="" disabled selected>Choose a service...</option>
+          <option value="Software Development">Software Development</option>
+          <option value="UI/UX Design">UI/UX Design</option>
+          <option value="Digital Marketing">Digital Marketing</option>
+          <option value="Brand Identity">Brand Identity</option>
+          <option value="Product Strategy">Product Strategy</option>
+          <option value="IT Staffing">IT Staffing</option>
+          <option value="More than one service">More than one service</option>
+        </select>
+      </div>
+      <div class="f-group">
+        <label for="quote-message">Tell Us More</label>
+        <textarea id="quote-message" name="MultiLine" maxlength="65535"
+          placeholder="What are you trying to achieve? What's your timeline and rough budget?"></textarea>
+      </div>
+      <button type="submit" class="btn-submit">
+        Send My Free Quote Request →
+      </button>
+    </form>
+    <div class="contact-alts reveal">
+      <a href="mailto:sales@qubrisource.com" class="contact-alt"><span>✉️</span> sales@qubrisource.com</a>
+      <a href="tel:+918125154397" class="contact-alt"><span>📞</span> +91 81251 54397</a>
+      <a href="#" class="contact-alt"><span>📍</span> Bangalore, India</a>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="footer-logo" href="#"><span class="logo-q">Qubri</span>source</a>
+        <p>
+          Helping businesses grow through better design, smarter marketing,
+          and reliable software — since 2012.
+        </p>
+        <div class="footer-socials">
+          <a href="#">in</a><a href="#">𝕏</a><a href="#">fb</a><a href="#">ig</a><a href="#">gh</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#">Software Development</a></li>
+          <li><a href="#">UI/UX Design</a></li>
+          <li><a href="#">Digital Marketing</a></li>
+          <li><a href="#">Brand Identity</a></li>
+          <li><a href="#">Product Strategy</a></li>
+          <li><a href="#">IT Staffing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Work</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Get in Touch</h5>
+        <ul>
+          <li>
+            <a href="mailto:sales@qubrisource.com">sales@qubrisource.com</a>
+          </li>
+          <li><a href="tel:+918125154397">+91 81251 54397</a></li>
+          <li><a href="#">Bangalore, India</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Qubrisource. All rights reserved.</p>
+      <span class="footer-badge">◆ Built in Bangalore, India</span>
+    </div>
+  </footer>
+
+  <iframe name="zoho-submit-frame" id="zoho-submit-frame" title="Form submission" hidden></iframe>
+
+  <div class="modal fade" id="formSuccessModal" tabindex="-1" aria-labelledby="formSuccessModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content form-success-modal">
+        <div class="modal-body text-center">
+          <div class="form-success-icon" aria-hidden="true">✓</div>
+          <h2 class="form-success-title" id="formSuccessModalLabel">
+            Request Submitted
+          </h2>
+          <p class="form-success-text">
+            Thank you! Your form has been submitted successfully. We'll get
+            back to you within 24 hours.
+          </p>
+          <button type="button" class="btn btn-primary form-success-btn" data-bs-dismiss="modal">
+            Got it
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="assets/js/images.js" defer></script>
+  <script src="assets/js/blog-data.js" defer></script>
+  <script src="assets/js/blog.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+
 </html>
