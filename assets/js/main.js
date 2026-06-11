@@ -116,6 +116,92 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 reveals.forEach(el => revealObserver.observe(el));
 
+/* ══ HERO STATS — count-up on scroll ══ */
+(function initHeroStatCountUp() {
+  const wrap = document.getElementById('heroStats');
+  if (!wrap) return;
+
+  const counters = [...wrap.querySelectorAll('.stat-n[data-count]')];
+  if (!counters.length) return;
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let played = false;
+
+  const format = (value, decimals) =>
+    decimals > 0 ? value.toFixed(decimals) : String(Math.round(value));
+
+  const runCounter = (el, delay = 0) => {
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const decimals = parseInt(el.dataset.decimals || '0', 10);
+    const duration = 1400;
+
+    const finish = () => { el.textContent = `${format(target, decimals)}${suffix}`; };
+
+    if (reducedMotion) {
+      finish();
+      return;
+    }
+
+    const start = () => {
+      const t0 = performance.now();
+      const tick = (now) => {
+        const progress = Math.min((now - t0) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = `${format(target * eased, decimals)}${suffix}`;
+        if (progress < 1) requestAnimationFrame(tick);
+        else finish();
+      };
+      requestAnimationFrame(tick);
+    };
+
+    delay ? setTimeout(start, delay) : start();
+  };
+
+  const playAll = () => {
+    if (played) return;
+    played = true;
+    counters.forEach((el, i) => runCounter(el, i * 90));
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    if (entries.some((e) => e.isIntersecting)) {
+      playAll();
+      observer.disconnect();
+    }
+  }, { threshold: 0.25, rootMargin: '0px 0px -20px 0px' });
+
+  observer.observe(wrap);
+
+  if (wrap.getBoundingClientRect().top < window.innerHeight * 0.85) {
+    playAll();
+  }
+})();
+
+/* ══ PROCESS — staggered scroll animations + timeline line ══ */
+(function initProcessAnimations() {
+  const grid = document.getElementById('processGrid');
+  if (!grid) return;
+  const steps = [...grid.querySelectorAll('.proc-step')];
+  const stepObserver = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      const idx = steps.indexOf(e.target);
+      e.target.style.transitionDelay = `${idx * 120}ms`;
+      e.target.classList.add('in');
+      stepObserver.unobserve(e.target);
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
+  steps.forEach((step) => stepObserver.observe(step));
+  const lineObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      grid.classList.add('line-in');
+      lineObserver.unobserve(grid);
+    }
+  }, { threshold: 0.15 });
+  lineObserver.observe(grid);
+})();
+
 /* â•â• PORTFOLIO FILTER â•â• */
 function filterPortfolio(btn, cat) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -325,14 +411,15 @@ document.querySelectorAll('.services-grid .srv-card, .testi-grid .testi-card, .p
   const af1 = document.querySelector('.about-float.af1');
   const af2 = document.querySelector('.about-float.af2');
   const aboutVisual = document.querySelector('.about-visual');
-  const aboutImg = document.querySelector('.about-img');
-  if (af1 && aboutVisual && aboutImg) {
-    const cs1 = getComputedStyle(af1);
-    const csV = getComputedStyle(aboutVisual);
+  if (!af1 || !af2 || !aboutVisual) return;
+  const logFloats = (runId) => {
     const r1 = af1.getBoundingClientRect();
-    const rImg = aboutImg.getBoundingClientRect();
-    fetch('http://127.0.0.1:7352/ingest/52a606f6-7120-4380-ab7d-85788f780c60',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'53054c'},body:JSON.stringify({sessionId:'53054c',location:'main.js:about-float',message:'about float position audit',data:{af1ComputedLeft:cs1.left,af1Position:cs1.position,af2ComputedRight:getComputedStyle(af2).right,visualOverflow:csV.overflow,af1LeftVsImage:r1.left-rImg.left,af1OverlapsImageLeft:r1.left<rImg.left,imageLeft:rImg.left,floatLeft:r1.left},timestamp:Date.now(),runId:'about-float-post-fix',hypothesisId:'A-B'})}).catch(()=>{});
-  }
+    const r2 = af2.getBoundingClientRect();
+    const vw = window.innerWidth;
+    fetch('http://127.0.0.1:7477/ingest/0057a08f-d305-4e9f-83cb-dd197c940b1c',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'b53b6e'},body:JSON.stringify({sessionId:'b53b6e',location:'main.js:about-float',message:'about float overflow audit',data:{viewportWidth:vw,af1Left:r1.left,af1Right:r1.right,af2Left:r2.left,af2Right:r2.right,af1OverflowLeft:r1.left<0,af2OverflowRight:r2.right>vw,af1ComputedLeft:getComputedStyle(af1).left,af2ComputedRight:getComputedStyle(af2).right},timestamp:Date.now(),runId,hypothesisId:'A'})}).catch(()=>{});
+  };
+  logFloats('initial');
+  window.addEventListener('resize', () => logFloats('resize'));
 })();
 (function () {
   document.querySelectorAll('.case-hero img').forEach((img, i) => {
