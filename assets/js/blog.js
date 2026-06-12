@@ -1,6 +1,38 @@
 (function () {
+  var SITE_ORIGIN = 'https://www.qubrisource.com';
+  var META_IMAGE = SITE_ORIGIN + '/assets/images/qubrisource-logo-dark.jpeg';
+  var META_IMAGE_ALT = 'Qubrisource Tech Pvt. Ltd. logo';
+
   function postUrl(slug) {
     return 'blog.html?slug=' + encodeURIComponent(slug);
+  }
+
+  function setMeta(attr, key, content) {
+    if (!content) return;
+    var selector = 'meta[' + attr + '="' + key + '"]';
+    var el = document.querySelector(selector);
+    if (!el) {
+      el = document.createElement('meta');
+      el.setAttribute(attr, key);
+      document.head.appendChild(el);
+    }
+    el.setAttribute('content', content);
+  }
+
+  function updatePageMeta(opts) {
+    document.title = opts.title;
+    setMeta('name', 'description', opts.description);
+    setMeta('property', 'og:title', opts.title);
+    setMeta('property', 'og:description', opts.description);
+    setMeta('property', 'og:url', opts.url);
+    setMeta('property', 'og:image', opts.image);
+    setMeta('property', 'og:image:alt', opts.imageAlt);
+    setMeta('name', 'twitter:title', opts.title);
+    setMeta('name', 'twitter:description', opts.description);
+    setMeta('name', 'twitter:image', opts.image);
+    setMeta('name', 'twitter:image:alt', opts.imageAlt);
+    var canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', opts.url);
   }
 
   function getPost(slug) {
@@ -47,11 +79,24 @@
     if (!post) {
       app.hidden = true;
       if (notFound) notFound.hidden = false;
-      document.title = 'Article Not Found — Qubrisource Blog';
+      updatePageMeta({
+        title: 'Article Not Found — Qubrisource Blog',
+        description: 'The article you are looking for could not be found on the Qubrisource blog.',
+        url: SITE_ORIGIN + '/blog.html',
+        image: META_IMAGE,
+        imageAlt: META_IMAGE_ALT,
+      });
       return;
     }
 
-    document.title = post.title + ' — Qubrisource Blog';
+    updatePageMeta({
+      title: post.title + ' — Qubrisource Blog',
+      description: post.excerpt,
+      url: SITE_ORIGIN + '/blog.html?slug=' + encodeURIComponent(post.slug),
+      image: META_IMAGE,
+      imageAlt: META_IMAGE_ALT,
+    });
+    setMeta('property', 'og:type', 'article');
 
     app.innerHTML =
       '<header class="article-hero">' +
