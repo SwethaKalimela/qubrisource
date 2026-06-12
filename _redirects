@@ -1,0 +1,4 @@
+# Canonical host: always serve www
+https://qubrisource.com/*  https://www.qubrisource.com/:splat  301!
+http://qubrisource.com/*   https://www.qubrisource.com/:splat  301!
+http://www.qubrisource.com/*  https://www.qubrisource.com/:splat  301!

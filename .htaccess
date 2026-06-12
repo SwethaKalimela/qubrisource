@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# Force HTTPS and www canonical host
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\.qubrisource\.com$ [NC]
+RewriteRule ^ https://www.qubrisource.com%{REQUEST_URI} [R=301,L]

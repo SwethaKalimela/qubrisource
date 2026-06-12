@@ -1,0 +1,21 @@
+{
+  "name": "Qubrisource",
+  "short_name": "Qubrisource",
+  "description": "Design, marketing, and software solutions for growing businesses.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#2A44E6",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
