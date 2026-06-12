@@ -224,37 +224,7 @@ document.querySelectorAll('.services-grid .srv-card, .testi-grid .testi-card, .p
 
   const track = wrap.querySelector('.team-carousel-track');
   const cards = [...wrap.querySelectorAll('.team-card')];
-  // #region agent log
-  (function debugTeamSocials() {
-    const socialBlocks = wrap.querySelectorAll('.team-socials');
-    const firstCard = cards[0];
-    const firstInfo = firstCard && firstCard.querySelector('.team-info');
-    const sampleLink = socialBlocks[0] && socialBlocks[0].querySelector('a');
-    const cardStyle = firstCard ? getComputedStyle(firstCard) : null;
-    const hasTeamSocialsRule = (function () {
-      for (const sheet of document.styleSheets) {
-        try {
-          for (const rule of sheet.cssRules || []) {
-            if (rule.selectorText && rule.selectorText.includes('.team-socials')) return true;
-          }
-        } catch (_) { /* cross-origin */ }
-      }
-      return false;
-    })();
-    const sampleLinkStyle = sampleLink ? getComputedStyle(sampleLink) : null;
-    fetch('http://127.0.0.1:7352/ingest/52a606f6-7120-4380-ab7d-85788f780c60',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'53054c'},body:JSON.stringify({sessionId:'53054c',location:'main.js:team-carousel',message:'team socials audit',data:{cardCount:cards.length,socialBlockCount:socialBlocks.length,socialLinkCount:wrap.querySelectorAll('.team-socials a').length,firstCardHasSocials:!!(firstInfo&&firstInfo.querySelector('.team-socials')),hasTeamSocialsCssRule:hasTeamSocialsRule,sampleLinkDisplay:sampleLinkStyle?sampleLinkStyle.display:null,sampleLinkVisible:sampleLink?sampleLink.offsetParent!==null:null,cardOverflow:cardStyle?cardStyle.overflow:null},timestamp:Date.now(),runId:'post-fix',hypothesisId:'verify'})}).catch(()=>{});
-    const viewportEl = wrap.querySelector('.team-carousel-viewport');
-    cards.forEach(function (card, i) {
-      card.addEventListener('mouseenter', function () {
-        var vp = viewportEl.getBoundingClientRect();
-        var cr = card.getBoundingClientRect();
-        var cs = getComputedStyle(card);
-        var vcs = viewportEl ? getComputedStyle(viewportEl) : null;
-        fetch('http://127.0.0.1:7352/ingest/52a606f6-7120-4380-ab7d-85788f780c60',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'53054c'},body:JSON.stringify({sessionId:'53054c',location:'main.js:team-card-hover',message:'team card hover clip audit',data:{cardIndex:i,inlineTransitionDelay:card.style.transitionDelay,computedTransitionDelay:cs.transitionDelay,transform:cs.transform,transitionDuration:cs.transitionDuration},timestamp:Date.now(),runId:'hover-speed-post-fix',hypothesisId:'B'})}).catch(()=>{});
-      });
-    });
-  })();
-  // #endregion
+
   const prevBtn = wrap.querySelector('.team-carousel-prev');
   const nextBtn = wrap.querySelector('.team-carousel-next');
   const dotsWrap = wrap.querySelector('.team-carousel-dots');
@@ -406,50 +376,4 @@ document.querySelectorAll('.services-grid .srv-card, .testi-grid .testi-card, .p
   iframe.addEventListener('load', onSubmitSuccess);
 })();
 
-// #region agent log
-(function () {
-  const af1 = document.querySelector('.about-float.af1');
-  const af2 = document.querySelector('.about-float.af2');
-  const aboutVisual = document.querySelector('.about-visual');
-  if (!af1 || !af2 || !aboutVisual) return;
-  const logFloats = (runId) => {
-    const r1 = af1.getBoundingClientRect();
-    const r2 = af2.getBoundingClientRect();
-    const vw = window.innerWidth;
-    fetch('http://127.0.0.1:7477/ingest/0057a08f-d305-4e9f-83cb-dd197c940b1c',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'b53b6e'},body:JSON.stringify({sessionId:'b53b6e',location:'main.js:about-float',message:'about float overflow audit',data:{viewportWidth:vw,af1Left:r1.left,af1Right:r1.right,af2Left:r2.left,af2Right:r2.right,af1OverflowLeft:r1.left<0,af2OverflowRight:r2.right>vw,af1ComputedLeft:getComputedStyle(af1).left,af2ComputedRight:getComputedStyle(af2).right},timestamp:Date.now(),runId,hypothesisId:'A'})}).catch(()=>{});
-  };
-  logFloats('initial');
-  window.addEventListener('resize', () => logFloats('resize'));
-})();
-(function () {
-  document.querySelectorAll('.case-hero img').forEach((img, i) => {
-    const cardIndex = i + 1;
-    const log = (message, data, hypothesisId) => {
-      fetch('http://127.0.0.1:7352/ingest/52a606f6-7120-4380-ab7d-85788f780c60', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': 'fc1f9b' },
-        body: JSON.stringify({
-          sessionId: 'fc1f9b',
-          runId: 'post-fix',
-          hypothesisId,
-          location: 'main.js:case-hero-img',
-          message,
-          data,
-          timestamp: Date.now()
-        })
-      }).catch(() => {});
-    };
-    if (img.complete && img.naturalWidth > 0) {
-      log('case study image loaded', { cardIndex, src: img.currentSrc || img.src, naturalWidth: img.naturalWidth }, 'H1');
-    } else if (img.complete) {
-      log('case study image broken', { cardIndex, src: img.currentSrc || img.src, naturalWidth: img.naturalWidth }, 'H1');
-    }
-    img.addEventListener('load', () => {
-      log('case study image loaded', { cardIndex, src: img.currentSrc || img.src, naturalWidth: img.naturalWidth }, 'H1');
-    });
-    img.addEventListener('error', () => {
-      log('case study image error', { cardIndex, src: img.currentSrc || img.src }, 'H1');
-    });
-  });
-})();
-// #endregion
+
