@@ -34,7 +34,7 @@
   --radius-lg: 16px;
   --radius-xl: 24px;
 
-  --font: 'Poppins', sans-serif;
+  --font: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --transition: 0.25s ease;
 }
 
@@ -49,6 +49,11 @@ body {
   font-family: var(--font);
   line-height: 1.65;
   overflow-x: hidden;
+}
+
+#services, #about, #process, #staffing, #portfolio, #cases, #testimonials, #team, #blog, #contact, footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
 }
 ::selection { background: var(--blue); color: #fff; }
 ::-webkit-scrollbar { width: 4px; }

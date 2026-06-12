@@ -1,8 +1,13 @@
 ﻿/* â•â• NEURAL NETWORK CANVAS â•â• */
 (function () {
   const canvas = document.getElementById('neural-canvas');
+  if (!canvas) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
   const ctx = canvas.getContext('2d');
-  let W, H, nodes, edges, pulses, raf;
+  const hero = document.getElementById('hero');
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  let W, H, nodes, edges, pulses, raf, running = false, frameSkip = 0;
 
   function resize() {
     W = canvas.width = canvas.offsetWidth;
@@ -11,7 +16,8 @@
   }
 
   function init() {
-    const N = Math.floor((W * H) / 16000);
+    const density = isMobile ? 28000 : 20000;
+    const N = Math.min(Math.floor((W * H) / density), isMobile ? 18 : 32);
     nodes = Array.from({ length: N }, () => ({
       x: Math.random() * W,
       y: Math.random() * H,
@@ -24,16 +30,18 @@
     edges = [];
     pulses = [];
     buildEdges();
-    for (let i = 0; i < 6; i++) spawnPulse();
+    for (let i = 0; i < (isMobile ? 3 : 6); i++) spawnPulse();
   }
 
   function buildEdges() {
     edges = [];
     const maxD = Math.min(W, H) * 0.18;
+    const maxD2 = maxD * maxD;
     for (let i = 0; i < nodes.length; i++) {
       for (let j = i + 1; j < nodes.length; j++) {
         const dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
-        if (Math.sqrt(dx * dx + dy * dy) < maxD) edges.push({ a: i, b: j, maxD });
+        const d2 = dx * dx + dy * dy;
+        if (d2 < maxD2) edges.push({ a: i, b: j, maxD, maxD2 });
       }
     }
   }
@@ -46,6 +54,12 @@
   }
 
   function frame() {
+    if (!running) return;
+    if (isMobile && ++frameSkip % 2) {
+      raf = requestAnimationFrame(frame);
+      return;
+    }
+
     ctx.clearRect(0, 0, W, H);
     const edgeColor = '42,68,230';
     const nodeColor = '42,68,230';
@@ -59,8 +73,9 @@
     edges.forEach(e => {
       const na = nodes[e.a], nb = nodes[e.b];
       const dx = na.x - nb.x, dy = na.y - nb.y;
-      const d = Math.sqrt(dx * dx + dy * dy);
-      if (d > e.maxD) return;
+      const d2 = dx * dx + dy * dy;
+      if (d2 > e.maxD2) return;
+      const d = Math.sqrt(d2);
       const al = (1 - d / e.maxD) * 0.08;
       ctx.strokeStyle = `rgba(${edgeColor},${al})`;
       ctx.lineWidth = .5;
@@ -87,9 +102,47 @@
     raf = requestAnimationFrame(frame);
   }
 
-  window.addEventListener('resize', () => { cancelAnimationFrame(raf); resize(); frame(); });
-  resize(); frame();
-  setInterval(buildEdges, 5000);
+  function start() {
+    if (running) return;
+    running = true;
+    frame();
+  }
+
+  function stop() {
+    running = false;
+    cancelAnimationFrame(raf);
+  }
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => { stop(); resize(); if (running) start(); }, 150);
+  }, { passive: true });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop();
+    else if (hero) start();
+  });
+
+  let ready = false;
+  const bootCanvas = () => {
+    resize();
+    ready = true;
+    if (!hero || hero.getBoundingClientRect().bottom > 0) start();
+  };
+
+  if (hero && 'IntersectionObserver' in window) {
+    const heroObserver = new IntersectionObserver((entries) => {
+      if (!ready) return;
+      entries[0].isIntersecting ? start() : stop();
+    }, { threshold: 0 });
+    heroObserver.observe(hero);
+  }
+
+  if ('requestIdleCallback' in window) requestIdleCallback(bootCanvas, { timeout: 1200 });
+  else setTimeout(bootCanvas, 1);
+
+  setInterval(() => { if (running) buildEdges(); }, 8000);
 })();
 
 /* â•â• MOBILE MENU â•â• */
@@ -98,11 +151,19 @@ function toggleMenu() {
 }
 
 /* â•â• SCROLL EFFECTS â•â• */
-window.addEventListener('scroll', () => {
+(function initNavScroll() {
   const nav = document.getElementById('nav');
-  if (window.scrollY > 40) nav.classList.add('scrolled');
-  else nav.classList.remove('scrolled');
-});
+  if (!nav) return;
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+      ticking = false;
+    });
+  }, { passive: true });
+})();
 
 /* â•â• REVEAL ON SCROLL â•â• */
 const reveals = document.querySelectorAll('.reveal');

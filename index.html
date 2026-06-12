@@ -57,13 +57,28 @@
 
   <link rel="icon" href="assets/images/logo-main-icon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" />
+  </noscript>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="preload" as="style"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  </noscript>
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="preload" as="image" href="assets/images/hero/hero-image-main.png" />
+  <link rel="preload" as="image" type="image/webp" href="assets/images/hero/hero-image-main-480.webp"
+    imagesrcset="assets/images/hero/hero-image-main-480.webp 480w, assets/images/hero/hero-image-main-768.webp 768w, assets/images/hero/hero-image-main-960.webp 960w, assets/images/hero/hero-image-main-1140.webp 1140w"
+    imagesizes="(max-width: 768px) 90vw, (max-width: 1140px) 50vw, 600px" />
 </head>
 
 <body>
@@ -139,7 +154,12 @@
 
     <div class="hero-visual">
       <div class="hero-img-wrap">
-        <img src="assets/images/hero/hero-image-main.png"
+        <img src="assets/images/hero/hero-image-main-768.webp" srcset="
+              assets/images/hero/hero-image-main-480.webp 480w,
+              assets/images/hero/hero-image-main-768.webp 768w,
+              assets/images/hero/hero-image-main-960.webp 960w,
+              assets/images/hero/hero-image-main-1140.webp 1140w
+            " sizes="(max-width: 768px) 90vw, (max-width: 1140px) 50vw, 600px"
           alt="Isometric illustration of digital growth, analytics dashboard, and business services" width="1536"
           height="1024" loading="eager" fetchpriority="high" decoding="async" />
       </div>
@@ -243,12 +263,12 @@
   <section id="about">
     <div class="about-visual reveal">
       <div class="about-img">
-        <img src="assets/images/about/about-team-800.webp" srcset="
+        <img src="assets/images/about/about-team-600.webp" srcset="
               assets/images/about/about-team-400.webp 400w,
               assets/images/about/about-team-600.webp 600w,
               assets/images/about/about-team-800.webp 800w
             " sizes="(max-width: 768px) 100vw, 480px" alt="Diverse Qubrisource team collaborating around a table"
-          width="800" height="1000" loading="lazy" decoding="async" />
+          width="600" height="750" loading="lazy" decoding="async" />
       </div>
       <div class="about-float af1">
         <div class="about-fn">12+</div>
@@ -818,7 +838,7 @@
             <article class="team-card">
               <div class="team-photo">
                 <span class="team-initials">DS</span>
-                <img src="assets/images/team/Dharani.jpeg" alt="Dharani Sivakumar" class="team-img">
+                <img src="assets/images/team/Dharani.webp" alt="Dharani Sivakumar" class="team-img" width="400" height="400" loading="lazy" decoding="async">
               </div>
               <div class="team-info">
                 <h4>Dharani Sivakumar</h4>
@@ -832,7 +852,7 @@
             <article class="team-card">
               <div class="team-photo">
                 <span class="team-initials">SA</span>
-                <img src="assets/images/team/sivakumar.jpeg" alt="Sivakumar Annaiah" class="team-img">
+                <img src="assets/images/team/sivakumar.webp" alt="Sivakumar Annaiah" class="team-img" width="400" height="400" loading="lazy" decoding="async">
               </div>
               <div class="team-info">
                 <h4>Sivakumar Annaiah</h4>
@@ -846,7 +866,7 @@
             <article class="team-card">
               <div class="team-photo">
                 <span class="team-initials">KR</span>
-                <img src="assets/images/team/kavitha.jpeg" alt="Kavitha R" class="team-img">
+                <img src="assets/images/team/kavitha.webp" alt="Kavitha R" class="team-img" width="400" height="400" loading="lazy" decoding="async">
               </div>
               <div class="team-info">
                 <h4>Kavitha R</h4>
@@ -860,7 +880,7 @@
             <article class="team-card">
               <div class="team-photo">
                 <span class="team-initials">V</span>
-                <img src="assets/images/team/veganandam.jpeg" alt="Veganandam" class="team-img">
+                <img src="assets/images/team/veganandam.webp" alt="Veganandam" class="team-img" width="400" height="400" loading="lazy" decoding="async">
               </div>
               <div class="team-info">
                 <h4>Veganandam</h4>
@@ -874,7 +894,7 @@
             <article class="team-card">
               <div class="team-photo">
                 <span class="team-initials">MR</span>
-                <img src="assets/images/team/Madan.jpeg" alt="Madan R" class="team-img">
+                <img src="assets/images/team/Madan.webp" alt="Madan R" class="team-img" width="400" height="400" loading="lazy" decoding="async">
               </div>
               <div class="team-info">
                 <h4>Madan R</h4>
@@ -888,7 +908,7 @@
             <article class="team-card">
               <div class="team-photo">
                 <span class="team-initials">PR</span>
-                <img src="assets/images/team/Pavitha.jpeg" alt="Pavitha R" class="team-img">
+                <img src="assets/images/team/Pavitha.webp" alt="Pavitha R" class="team-img" width="400" height="400" loading="lazy" decoding="async">
               </div>
               <div class="team-info">
                 <h4>Pavitha R</h4>
@@ -902,7 +922,7 @@
             <article class="team-card">
               <div class="team-photo">
                 <span class="team-initials">CS</span>
-                <img src="assets/images/team/Charan.jpeg" alt="Charan S" class="team-img">
+                <img src="assets/images/team/Charan.webp" alt="Charan S" class="team-img" width="400" height="400" loading="lazy" decoding="async">
               </div>
               <div class="team-info">
                 <h4>Charan S</h4>
@@ -916,7 +936,7 @@
             <article class="team-card">
               <div class="team-photo">
                 <span class="team-initials">SMA</span>
-                <img src="assets/images/team/Ashraf.jpeg" alt="Syed Mohammad Ashraf" class="team-img">
+                <img src="assets/images/team/Ashraf.webp" alt="Syed Mohammad Ashraf" class="team-img" width="400" height="400" loading="lazy" decoding="async">
               </div>
               <div class="team-info">
                 <h4>Syed Mohammad Ashraf</h4>
@@ -930,7 +950,7 @@
             <article class="team-card">
               <div class="team-photo">
                 <span class="team-initials">AM</span>
-                <img src="assets/images/team/Arthif.jpeg" alt="Arthif M" class="team-img">
+                <img src="assets/images/team/Arthif.webp" alt="Arthif M" class="team-img" width="400" height="400" loading="lazy" decoding="async">
               </div>
               <div class="team-info">
                 <h4>Arthif M</h4>
@@ -944,7 +964,7 @@
             <article class="team-card">
               <div class="team-photo">
                 <span class="team-initials">S</span>
-                <img src="assets/images/team/swetha.png" alt="Swetha" class="team-img">
+                <img src="assets/images/team/swetha.webp" alt="Swetha" class="team-img" width="400" height="400" loading="lazy" decoding="async">
               </div>
               <div class="team-info">
                 <h4>Swetha</h4>
@@ -958,7 +978,7 @@
             <article class="team-card">
               <div class="team-photo">
                 <span class="team-initials">S</span>
-                <img src="assets/images/team/Sandhya.jpeg" alt="Sandhya" class="team-img">
+                <img src="assets/images/team/Sandhya.webp" alt="Sandhya" class="team-img" width="400" height="400" loading="lazy" decoding="async">
               </div>
               <div class="team-info">
                 <h4>Sandhya</h4>
@@ -972,7 +992,7 @@
             <article class="team-card">
               <div class="team-photo">
                 <span class="team-initials">T</span>
-                <img src="assets/images/team/Thabraz.jpeg" alt="Thabraz" class="team-img">
+                <img src="assets/images/team/Thabraz.webp" alt="Thabraz" class="team-img" width="400" height="400" loading="lazy" decoding="async">
               </div>
               <div class="team-info">
                 <h4>Thabraz</h4>
@@ -1155,7 +1175,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous" defer></script>
   <script src="assets/js/images.js" defer></script>
   <script src="assets/js/blog-data.js" defer></script>
   <script src="assets/js/blog.js" defer></script>
